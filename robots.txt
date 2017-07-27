@@ -1,0 +1,3 @@
+User-agent: *
+Sitemap: http://скачай-ка.рф/Static/sitemap.xml
+Host: http://скачай-ка.рф

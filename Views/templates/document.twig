@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <title>{% block title %}Лучшие гры и программы для смартфона{% endblock %}</title>
+        {% block meta %}
+            <meta name="language" content="Russian">
+            <meta name=viewport content="width=device-width, initial-scale=1">
+            <meta http-equiv="content-type" content="text/html; charset=utf-8">
+            <meta name="robots" content="index,follow" />
+            <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable = no">
+            <meta name="yandex-verification" content="826836a35ab77ffa" />
+            <meta name="google-site-verification" content="xzRCAeB2_X7ccli8ZRslhQp8I9ob9hnBeY7v2fYZVJo" />
+            <link rel="sitemap" type="application/xml" title="Sitemap" href="/Static/sitemap.xml" />
+        {% endblock %}
+        <link rel="search" type="application/opensearchdescription+xml" title="Поиск на Скачай-ка.рф" href="/Static/pdalife/opensearch.xml" />
+        {% block style %}
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+            <link type="text/css" rel="StyleSheet" href="/Static/pdalife/css/enty-style.css" />
+
+            <link href="/Static/pdalife/css/mainstyle.css" rel="stylesheet" type="text/css">
+            <link href="/Static/pdalife/css/spinner.css" rel="stylesheet" type="text/css">
+            <link href="/Static/pdalife/css/style.css" rel="stylesheet" type="text/css">
+            <link href="/Static/pdalife/css/ui/jquery-ui.css" rel="stylesheet" type="text/css">
+            <link id="dyncss" rel="stylesheet" type="text/css" href="/Static/pdalife/css/list.css" />
+
+            <link type="text/css" rel="stylesheet" href="/Static/pdalife/css/ulightbox.css" />
+            <style type="text/css">.UhideBlock{display:none; }</style>
+        {% endblock %}
+        <link rel="shortcut icon" href="/Static/pdalife/favicon.ico">
+
+        <!--
+        <script type="text/javascript" src="/Static/js/jquery-1.7.2.js"></script>
+        -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script type="text/javascript" src="/Static/pdalife/js/ulightbox.js"></script>
+
+    </head>
+    <body id="mainContainer">
+        <script src="/Static/pdalife/js/ui.js"></script>
+        <div id="container">
+
+            <div id="top">
+                <div class="cnt">
+                    <div class="top-social">
+                        <a href="https://vk.com/cka4ayka" title="Мы ВКонтакте" target="_blank" rel="nofollow">
+                            <img src="/Static/pdalife/images/top_social_2.png" alt="ВКонтакте" />
+                        </a>
+                        <a href="https://plus.google.com/communities/117174876560646858526" title="Google+" target="_blank" rel="nofollow">
+                            <img src="/Static/pdalife/images/top_social_8.png" alt="Google+" />
+                        </a>
+                    </div>
+                </div>
+                <form id="search" method="get" action="/search/">
+                    <input class="fs-field new-width" id="search-input" name="q" type="text" placeholder="Поиск по сайту" style="width: 110px;">
+                    <input id="search" type="submit" value="Найти">
+                </form>
+            </div>
+            <script src="/Static/pdalife/js/ui/jquery-ui.js"></script>
+            <script type="text/javascript">
+                $(function(){
+                    $("#search-input").autocomplete({
+                        source: '/search/',
+                        minLength: 3,
+                        select: function( event, ui ){
+                            window.location = '/search/?q=' + encodeURIComponent(ui.item.value);
+                        }
+                    });
+                });
+            </script>
+            {% block header %}
+                {% include '.inc/header.twig' %}
+            {% endblock %}
+
+            {% block content %}{% endblock %}
+                <style type="text/css">
+                    .u-star-rating-24 { list-style:none;margin:0px;padding:0px;width:120px;height:24px;position:relative;background: url('/img/rating_star_03.png') top left repeat-x }
+                    .u-star-rating-24 li{ padding:0px;margin:0px;float:left }
+                    .u-star-rating-24 li a { display:block;width:24px;height: 24px;line-height:24px;text-decoration:none;text-indent:-9000px;z-index:20;position:absolute;padding: 0px;overflow:hidden }
+                    .u-star-rating-24 li a:hover { background: url('/img/rating_star_03.png') left center;z-index:2;left:0px;border:none }
+                    .u-star-rating-24 a.u-one-star { left:0px }
+                    .u-star-rating-24 a.u-one-star:hover { width:24px }
+                    .u-star-rating-24 a.u-two-stars { left:24px }
+                    .u-star-rating-24 a.u-two-stars:hover { width:48px }
+                    .u-star-rating-24 a.u-three-stars { left:48px }
+                    .u-star-rating-24 a.u-three-stars:hover { width:72px }
+                    .u-star-rating-24 a.u-four-stars { left:72px }
+                    .u-star-rating-24 a.u-four-stars:hover { width:96px }
+                    .u-star-rating-24 a.u-five-stars { left:96px }
+                    .u-star-rating-24 a.u-five-stars:hover { width:120px }
+                    .u-star-rating-24 li.u-current-rating { top:0 !important; left:0 !important;margin:0 !important;padding:0 !important;outline:none;background: url('/img/rating_star_03.png') left bottom;position: absolute;height:24px !important;line-height:24px !important;display:block;text-indent:-9000px;z-index:1 }
+                </style>
+
+            <footer>
+                <div class="">
+
+
+<div class="statistic">
+    <div class="stat-block">Всего: <b>{{statistic.all.files}}</b> </div>
+         {% for platform,item in statistic.platform %}
+             <div class="stat-block">
+                 {{platform|upper}}: <b>{{item.files}}</b>
+             </div>
+         {% endfor %}
+</div>
+</div>
+
+                <div class="bottom">
+                    <div class="cnt">
+                        &copy; 2017 Скачай-ка.рф
+                        <div style="width:88px; height:31px; border:0; position: absolute; right: 50px; top: -5px;">
+
+
+                        <!--LiveInternet counter--><script type="text/javascript">
+document.write("<a href='//www.liveinternet.ru/click' "+
+"target=_blank><img src='//counter.yadro.ru/hit?t11.6;r"+
+escape(document.referrer)+((typeof(screen)=="undefined")?"":
+";s"+screen.width+"*"+screen.height+"*"+(screen.colorDepth?
+screen.colorDepth:screen.pixelDepth))+";u"+escape(document.URL)+
+";"+Math.random()+
+"' alt='' title='LiveInternet: показано число просмотров за 24"+
+" часа, посетителей за 24 часа и за сегодня' "+
+"border='0' width='88' height='31'><\/a>")
+</script><!--/LiveInternet-->
+</div>
+<div style="width:88px; height:31px; border:0; position: absolute; right: 150px; top: -5px;">
+                        <!-- Yandex.Metrika informer -->
+                        <a href="https://metrika.yandex.ru/stat/?id=45232791&amp;from=informer"
+                        target="_blank" rel="nofollow">
+                            <img src="https://informer.yandex.ru/informer/45232791/3_0_FFFFFFFF_EFEFEFFF_0_uniques"
+
+                                alt="Яндекс.Метрика"
+                                title="Яндекс.Метрика: данные за сегодня (просмотры, визиты и уникальные посетители)"
+                                class="ym-advanced-informer" data-cid="45232791" data-lang="ru" />
+                        </a>
+                        <!-- /Yandex.Metrika informer -->
+
+                        <!-- Yandex.Metrika counter -->
+                        <script type="text/javascript">
+                            (function (d, w, c) {
+                                (w[c] = w[c] || []).push(function() {
+                                    try {
+                                        w.yaCounter45232791 = new Ya.Metrika({
+                                            id:45232791,
+                                            clickmap:true,
+                                            trackLinks:true,
+                                            accurateTrackBounce:true,
+                                            webvisor:true
+                                        });
+                                    } catch(e) { }
+                                });
+
+                                var n = d.getElementsByTagName("script")[0],
+                                    s = d.createElement("script"),
+                                    f = function () { n.parentNode.insertBefore(s, n); };
+                                s.type = "text/javascript";
+                                s.async = true;
+                                s.src = "https://mc.yandex.ru/metrika/watch.js";
+
+                                if (w.opera == "[object Opera]") {
+                                    d.addEventListener("DOMContentLoaded", f, false);
+                                } else { f(); }
+                            })(document, window, "yandex_metrika_callbacks");
+                        </script>
+                        <noscript>
+                            <div>
+                                <img src="https://mc.yandex.ru/watch/45232791" style="position:absolute; left:-9999px;" alt="" />
+                            </div>
+                        </noscript>
+                        <!-- /Yandex.Metrika counter -->
+</div>
+                        <div class="go-top" title="Вверх"><i class="fa fa-angle-up"></i></div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </body>
+</html>

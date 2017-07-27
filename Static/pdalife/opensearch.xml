@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OpenSearchDescription xmlns="http://a9.com/-/spec/opensearch/1.1/">
+    <ShortName>Скачай-ка</ShortName>
+    <Description>Поиск торрентов игр и программ на скачай-ка.рф</Description>
+    <Image width="16" height="16" type="image/x-icon">http://скачай-ка.рф/Static/parse/ico/favicon.ico</Image>
+    <Tags>torrent search video movies торрент кино фильм</Tags>
+    <Contact>smirnov1994@mail.ru</Contact>
+    <Url type="text/html" template="http://скачай-ка.рф/search/q={searchTerms}"/>
+    <InputEncoding>UTF-8</InputEncoding>
+</OpenSearchDescription>

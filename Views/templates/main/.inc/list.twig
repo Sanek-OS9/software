@@ -1,0 +1,28 @@
+<div class="h-title-heading">
+    <div class="h-title2"><h3>{{ title }}</h3></div>
+    <div class="more-tooltip">
+        <div class="title-more-tooltip">Ещё</div>
+        <div class="more-tooltip-cell-icn">
+            <div class="more-tooltip-content icn">
+                {% include 'main/.inc/more.links.twig' %}
+            </div>
+        </div>
+    </div>
+</div>
+{% for file in item %}
+    <div class="eh-preview last24" itemscope itemtype="http://schema.org/ApplyAction">
+        <div class="eh-thumb">
+            <img src="{{ file.screen }}" alt="{{ file.runame }}">
+            <div class="mask">
+                <span><i class="fa fa-eye" title="Просмотров"></i> {{ file.views }}</span>
+                <span><i class="fa fa-anchor" title="Размер"></i> {{ file.size }}</span>
+                <span><i class="fa fa-star" title="Рейтинг {{ file.rating }} из 5"></i> {{ file.rating }}</span>
+                <a href="{{ file.screen }}" class="zoom ulightbox" title="Увеличить"> <i class="fa fa-expand"></i></a>
+                <a href="{{ file.link_view }}" class="more" title="Подробнее" rel="nofollow"> <i class="fa fa-arrow-right"></i></a>
+                <div class="eh-date">{{ file.version }}</div>
+            </div>
+        </div>
+        <a itemprop="url" class="h-title" href="{{ file.link_view }}" title="{{ file.runame }}"><span itemprop="name">{{ file.runame|slice(0, 25) }}</span></a>
+        <div class="h-meta">{{ file.version }}</div>
+    </div>
+{% endfor %}

@@ -1,0 +1,55 @@
+
+{% extends 'base.twig' %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block sort %}
+    Новые торренты
+    <hr>
+{% endblock %}
+
+{% block content %}
+<div class="articles">
+    <div class="articles-film-cuted">
+        {% for file in files %}
+            <div id="entryID{{ file.id }}">
+                <div class="article-bl">
+                    <div class="article-film">
+                        <div class="article-film-descr">
+                            <div class="article-film-descr-bottom"></div>
+                            <div class="article-film-descr-content">{{ file.runame }}</div>
+                        </div>
+                        <div class="article-film-image">
+                            <div class="article-film-overlay" style="display: none; top: -100px; opacity: 0;">
+                                <div class="article-film-overlay-content">
+                                    <div class="article-film-date">
+                                        <span title="Добавлено {{ file.time_add }}">{{ file.add_date }}</span>
+                                    </div>
+                                    <a class="article-film-show-descr"></a>
+                                    <div class="article-film-info">
+                                        Размер: {{ file.size }}<br>
+                                        Просмотров: {{ file.views|number_format }}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="article-film-rating" style="display: none; top: 230px; opacity: 0;">
+                                <div class="article-film-rating-stars" style="padding: 8px 0 12px 28px; margin-bottom: 18px;">
+                                    <ul class="u-star-rating-18" title="Рейтинг: {{ file.rating }}/5">
+                                        <li class="u-current-rating" style="width:{{ file.rating_percent }}%;"></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="article-film-badge"></div>
+                            <img class="article-img" src="/Static/files/torrent/{{ file.platform }}/{{ file.genre }}/{{ file.name }}.jpg" alt="">
+                        </div>
+                        <div class="article-film-title">
+                            {{ file.runame|raw|slice(0, 40) }}...
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+        {% include '.inc/pages.twig' %}
+    </div>
+</div>
+{% endblock %}

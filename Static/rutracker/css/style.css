@@ -1,0 +1,15 @@
+.u-star-rating-18 { list-style:none;margin:0px;padding:0px;width:90px;height:18px;position:relative;background: url('http://rutracker.co.ua/images/rating.png') top left repeat-x }
+.u-star-rating-18 li{ padding:0px;margin:0px;float:left }
+.u-star-rating-18 li a { display:block;width:18px;height: 18px;line-height:18px;text-decoration:none;text-indent:-9000px;z-index:20;position:absolute;padding: 0px;overflow:hidden }
+.u-star-rating-18 li a:hover { background: url('http://rutracker.co.ua/images/rating.png') left center;z-index:2;left:0px;border:none }
+.u-star-rating-18 a.u-one-star { left:0px }
+.u-star-rating-18 a.u-one-star:hover { width:18px }
+.u-star-rating-18 a.u-two-stars { left:18px }
+.u-star-rating-18 a.u-two-stars:hover { width:36px }
+.u-star-rating-18 a.u-three-stars { left:36px }
+.u-star-rating-18 a.u-three-stars:hover { width:54px }
+.u-star-rating-18 a.u-four-stars { left:54px }
+.u-star-rating-18 a.u-four-stars:hover { width:72px }
+.u-star-rating-18 a.u-five-stars { left:72px }
+.u-star-rating-18 a.u-five-stars:hover { width:90px }
+.u-star-rating-18 li.u-current-rating { top:0 !important; left:0 !important;margin:0 !important;padding:0 !important;outline:none;background: url('http://rutracker.co.ua/images/rating.png') left bottom;position: absolute;height:18px !important;line-height:18px !important;display:block;text-indent:-9000px;z-index:1 }

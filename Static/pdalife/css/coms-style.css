@@ -1,0 +1,51 @@
+.comm-blockm{margin:20px 0px 20px 30px;position: relative;}
+.comm{overflow:hidden;margin-bottom:15px;}
+.comm-ava{float:left;min-height: 50px;text-align:center;width:90px;}
+.user-ava{border:medium none currentColor!important;float:left;height:75px;width:90px;margin:0 0 5px;}
+.user-ava img{border-radius:50%;float:left;height:66px;width:66px;margin:0 9px;
+border-top-style: solid;
+border-top-width: 3px;
+border-right-style: solid;
+border-right-width: 3px;
+border-bottom-style: solid;
+border-bottom-width: 3px;
+border-left-style: solid;
+border-left-width: 3px;}
+.comm-rating{height:30px;width:90px;}
+.comm-rating i{border-radius:3px;transition: all 0.3s cubic-bezier(0.42, 0, 1, 1) 0s;margin:0 3px;padding:5px;}
+.comm-rating a:hover i{color:#FFF;}
+.comm-rating a:hover{color:#FFF;text-decoration:none!important;}
+.myWinError{color:#E75660!important;}
+.comm-cnt{margin-left:105px;}
+.comm-mess{border-radius:3px;display:block;text-align:justify;white-space:normal;position:relative;padding:10px 10px 5px;}
+.comm-mess:after{right:100%;border:solid transparent;content:" ";height:0;width:0;position:absolute;pointer-events:none;top:36px;margin-top:-10px;border-color:rgba(136,183,213,0);border-width:10px;}
+.comm-user{font-size:14px;display:block;line-height:14px;}
+.comm-m{margin-top:5px;min-height:67px;}
+.comm-pr-m{margin-top:5px;min-height:32px;}
+.comm-mab{margin-top:5px;min-height:42px;}
+.numb{margin-right:5px;color:#A7A7A7;}
+.numb1 i{transition: all 0.3s cubic-bezier(0.42, 0, 1, 1) 0s;cursor:pointer;margin:0 0 0 5px;}
+.numb a:first-child {margin:0 0 0 5px;}
+.numb1{display: none;}
+.comm-mess:hover .numb1{display: block;}
+.commFl{width:688px!important;}
+.commFl1{width:325px!important;margin-bottom:0;}
+.commFl2{width:324px!important;margin-left:15px;margin-bottom:0;float:right;}
+.commTd1,.commTd2{padding-top:10px!important;}
+.answer-bt{margin-top:5px;display:block;}
+.com-credit
+{opacity: 0;transition: all 0.5s cubic-bezier(0.42, 0, 0.58, 1) 0;}
+.comm-mess:hover .com-credit
+{opacity: 1;}
+.com-order-block {
+position: absolute;
+top: -7px;
+right:-1px;
+}
+.com-order-select{
+background:#5D5D5D;
+padding: 5px;
+color: #FFFFFF;
+height: 30px;
+overflow: hidden;
+}

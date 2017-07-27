@@ -1,0 +1,315 @@
+@charset "utf-8";
+
+.res-label {background: #09bebc;}
+.res-list{background: #0EA7A4;}
+
+::selection {
+	background: #09bebc;
+	color: #fff;
+}
+a, a:link, a:visited, a:active, .f-block-title, .f-block-title2, .member-name h4 {
+	color: #09bebc;
+}
+nav ul li ul {
+	box-shadow: inset 0 3px 0 #09bebc;
+}
+nav ul li ul li a:hover, .h-entry h3 a:hover, .reg:hover, .ent-title:hover, .bottom a:hover, .knopki-color:hover i, .myWinSuccess, .h-title:hover, .bs-show:hover, .knopki-color:hover, .more-link:hover {
+	color: #09bebc !important;
+}
+.f-block a:hover{
+	color: #09bebc;
+}
+.swchItemA span, .swchItemA1 span, .more2, a.title-more, .title-more-tooltip, .service:hover .service-icon, #container input[type="button"], #container input[type="submit"], #container input[type="reset"], #path, #path-forum, em, .categories .catNameActive, .photo-informer, .signin, .sf-icons i, .RelatedEntry {
+	background: #09bebc;
+}
+a.more3:hover, .swchItem:hover span, .swchItemA1:hover span, .catName:hover, .progress-bars li span, .eTag:hover {
+	background: #09bebc !important;
+}
+.flex-prev:hover {
+	background: #09bebc url(/Static/pdalife/images/prev-hover.png) center no-repeat;
+}
+.flex-next:hover {
+	background: #09bebc url(/Static/pdalife/images/next-hover.png) center no-repeat;
+}
+.title1 span, .h-title2 {
+	background: url(/Static/pdalife/images/line3.png) left bottom no-repeat;
+}
+.accordion li.a-active > h4, .r-pages > span a:hover, .small-contact span, .go-top:hover {
+	background-color: #09bebc;
+}
+#container textarea:focus, #container input[type="text"]:focus, #container input[type="password"]:focus {
+	box-shadow: inset 0 0 0 1px #09bebc !important;
+}
+.notice-message, .quote2 {
+	border-left: 2px solid #09bebc;
+}
+.calWdaySu, .calWdaySe, .gTableTop, .meta-post a:hover, .faq-block a:hover i {
+	background: #09bebc;
+}
+.rating-num {
+box-shadow: inset 0px 2px 0px #09bebc;
+}
+.u-star-rating-24,.u-star-rating-24 li a:hover,.u-star-rating-24 li.u-current-rating {background-image:url(/Static/pdalife/images/rating_star_03.png)!important;}
+.dd_menu_1:hover .drop, .user-icons:hover {box-shadow: inset 0px 2px 0px #09bebc;}
+.download i, #files i, .catNumData {background: #0EA7A4;}
+
+.wysibb .wysibb-toolbar .wysibb-toolbar-container {background: #09bebc !important;border-right: 1px solid #0EA7A4 !important;}
+.wysibb .wysibb-toolbar, .commTd2 .wbb-select .val {background: #09bebc !important;}
+.wysibb .wysibb-toolbar .wysibb-toolbar-container .wysibb-toolbar-btn:hover,.wysibb .wysibb-toolbar .wysibb-toolbar-container .wysibb-toolbar-btn.on, .wysibb .wysibb-toolbar .wysibb-toolbar-container .wysibb-toolbar-btn.on:hover  {background: #0EA7A4 !important;}
+.wysibb .wysibb-toolbar .modeSwitch, .fNavLink:first-child {border-left: 1px solid #0EA7A4 !important;}
+.fNavLink {border-right: 1px solid #0EA7A4}
+.fNavLink:hover, .comm-rating a:hover i {background: #0EA7A4;}
+
+.switchDigit:hover, .switchBack:hover, .switchNext:hover, .switchActive {background: #0EA7A4;}
+.codeMessage, .quoteMessage {border-left: 2px solid #0EA7A4!important;}
+
+.th-thumb .mask, .eh-thumb .mask, .ws-thumb:hover, .thumb span{background-color:rgba(10, 191, 188, 0.898);}
+.catSortLink:hover{box-shadow: inset 0px -2px #09bebc;}
+.gl-buttons {background: #09bebc;}
+.download {background: #09bebc;}
+.download:hover {background: #0EA7A4;}
+#link_1:checked ~ #link_l1 i,#link_2:checked ~ #link_l2 i,#link_3:checked ~ #link_l3 i{color:#09bebc;}
+.jcarousel-prev:hover {cursor:pointer;background: #09bebc;}
+.jcarousel-next:hover {cursor:pointer;background: #09bebc;}
+#item-photos li a{background: #09bebc;}
+#item-photos li a:hover:after {border-bottom-color: rgba(9, 190, 188, 0.7);}
+#theven-video-open {background: #09bebc;}
+#theven-video-open:hover:after {border-bottom-color: #09bebc;}
+
+
+#leftSwch, #rightSwch, .ph-tc {background: #09bebc!important;}
+#rightSwch:hover, #leftSwch:hover {background: #0EA7A4!important;}
+.photoActive {border: 2px solid #09bebc!important;}
+
+.fq-thumb:hover .more3 {background: #09bebc!important;}
+.fq-thumb .more3:hover {background: #0EA7A4!important;}
+#commreset i {color: #09bebc;}
+
+/* ЛС
+------------------------------------------*/
+
+.headers-ls, .click-profile-my, .pmCatLinkActive b, .pmCatLink b, #bar_fill, .vscrollerbar, #sbm {background: #09bebc;}
+#PMtoUser:focus, #pmSubject:focus, #newmess input[type="text"]:focus {box-shadow: inset 0px 0px 0px 1px #09bebc;}
+.news-good-love b {background: #09bebc url(/profile/img/news.png) 0px 0px;}
+.pmCatLinkActive {border-left: solid 4px #09bebc;}
+.headers-gl, .headers-users, .click-profile-my:hover, #sbm:hover {background: #0EA7A4;}
+.headers-gl:hover, .headers-users:hover {background: #0D9898;}
+
+/* Вход
+------------------------------------------*/
+.login-logo, .loginbutton {background: #09bebc;}
+.login-logo:hover, .loginbutton:hover {background: #0EA7A4;}
+.loginField:focus {box-shadow: inset 0px 0px 0px 1px #09BEBC;}
+.loginField {color: #09bebc;}
+
+/* Список пользователей
+------------------------------------------*/
+#stroka-poiska:hover, #stroka-poiska:focus {box-shadow: inset 0px 0px 0px 1px #09bebc;}
+#Poisk-knopka, #ourselect2, #ourselect3, #ourselect12{background: #09bebc;}
+#Poisk-knopka:hover {background: #0EA7A4;}
+.select {background: url(/profile/img/ugolok-sector3.png) 140px 0px no-repeat #09bebc;}
+
+/* Ajax
+------------------------------------------*/
+.myWinCont textarea:focus,.cuzadpn input:focus,.myWinCont input:focus[type='text'], .myWinCont input:focus[type='password']{box-shadow:inset 0 0 0 1px #09bebc;}
+.xw-hdr,.xw-tl,.xw-tr,.xw-tc,.myBtnCont a:link,.myWinCont .pgSwchA,.myWinCont a.pgSwch:hover{background:#09bebc!important;}
+.u-menu .u-menuitemhl:hover,.pbarFiller{background:#09bebc!important;}
+.myBtnCont a:link {background:#09bebc!important;}
+.myBtnCont a:hover {background: #0EA7A4!important;}
+
+/* Профиль
+------------------------------------------*/
+li .selected {
+box-shadow: inset 4px 0px 0px #09bebc;
+}
+.knopka-li b {
+background: #09bebc;
+}
+
+.infa-ya-online, .knopka-my-ls, .knopka-nastroyki, .knopka-sp, .infa-status-polzovatelya {
+border-left: 1px solid #0EA7A4;
+}
+.knopka-my-ls:hover, .knopka-nastroyki:hover, .knopka-sp:hover {
+background: #0EA7A4;
+}
+.news-ls-v-knopke i {
+background: #09bebc;
+border: 1px solid #09bebc;
+}
+.knopka-my-ls:hover .news-ls-v-knopke i {
+background: #0EA7A4;
+border: 1px solid #0EA7A4;
+}
+.info-block-osnova-content {
+color: #09bebc;
+}
+.knopka-minus-reputation-klick, .knopka-plus-reputation-klick {
+background: #09bebc;
+}
+.knopka-minus-reputation-klick:hover, .knopka-plus-reputation-klick:hover {
+background: #0EA7A4;
+}
+.centrirovan-block-orogress .centrirovan-block-orogress-gggg {
+ background: #09bebc;
+}
+#ticker-next:hover, #ticker-previous:hover {
+background: #09bebc;
+}
+
+#editRep, .krug-q-2, .polosa-q-2, .dostijenie-1, .dostijenie-2, .dostijenie-3, .dostijenie-4, .dostijenie-5, .dostijenie-6, .dostijenie-7, .dostijenie-8, .dostijenie-9, .dostijenie-10, .dostijenie-11, .dostijenie-12, .dostijenie-13, .delete-all-izbrannoe, #com-rasshiren-vid{
+background: #09bebc;
+}
+
+.chislo-knopki, .bloki-rep-stats i, .knopka-bloka-aktivnost-1:hover .krug-aktiv-1, .knopka-bloka-aktivnost-2:hover .krug-aktiv-2, .knopka-bloka-aktivnost-3:hover .krug-aktiv-3, .knopka-bloka-aktivnost-4:hover .krug-aktiv-4, .knopka-bloka-aktivnost-5:hover .krug-aktiv-5, .knopka-bloka-aktivnost-6:hover .krug-aktiv-6, .content-izbrannoe-themes-block, .good-like-galochka {
+color: #09bebc;
+}
+
+.dostijenie-1:hover, .dostijenie-2:hover, .dostijenie-3:hover, .dostijenie-4:hover, .dostijenie-5:hover, .dostijenie-6:hover, .dostijenie-7:hover, .dostijenie-8:hover, .dostijenie-9:hover, .dostijenie-10:hover, .dostijenie-11:hover, .dostijenie-12:hover, .dostijenie-13:hover, .delete-all-izbrannoe:hover, #com-rasshiren-vid:hover, #editRep i:hover, #editRep:nth-child(2) i:hover, #com-rasshiren-vid:hover  {
+background: #0EA7A4;
+}
+
+#cvet-reputacii-krug {
+color: #09bebc;
+display: none;
+}
+
+.related-entrys li:hover {background: #09bebc;}
+.fq-taqs a:hover {box-shadow: inset 0 0 0 1px #09bebc;}
+
+.style-perehod {background: #09bebc !important;}
+.style-perehod:hover {background: #0EA7A4 !important;}
+
+.pgSwchA b, .pgSwch:hover {background: #09bebc;}
+.forum-meta-inf {background: #09bebc;}
+
+/* Регистрация
+------------------------------------------------------------------------------------------------------------------------------*/
+.reg-header, .manFlSbm, .selected .block-activ-seanse-1, .selected .block-activ-seanse-2, .selected .block-activ-seanse-3 {
+background: #09bebc;
+}
+.manFlLogin:focus, .manFlaName:focus, .manFlaEmail:focus, .manFlPassw:focus, .manFlPassw1:focus, #fCode:focus, .manFlAvaLink:focus, .manFlaCity:focus, .manFlaSign:focus, .securityCode:focus, .captcha-answer:focus {
+box-shadow: inset 0px 0px 0px 1px #09bebc;
+}
+#selectby {
+background: url(/profile/img/ugolok-sector3.png) 65px 0px no-repeat #09bebc;
+}
+#selectbm {
+background: url(/profile/img/ugolok-sector3.png) 75px 0px no-repeat #09bebc;
+}
+#selectbd {
+background: url(/profile/img/ugolok-sector3.png) 60px 0px no-repeat #09bebc;
+}
+#selectgender, #selectcountry {
+background: url(/profile/img/ugolok-sector3.png) 280px 0px no-repeat #09bebc;
+}
+.manFlaState, .manFlaSite, .manFlaMSN, .manFlaICQ, .manFlaYahoo  {
+color: #09bebc;
+}
+.manFlaSite:focus , .manFlaMSN:focus , .manFlaICQ:focus , .manFlaYahoo:focus {
+box-shadow: inset 0px 0px 0px 1px #09bebc;
+}
+.manFlLogin, .manFlaName, .manFlaEmail, .manFlPassw, .manFlPassw1, #fCode, .manFlAvaLink, .manFlaCity, .manFlaSign, .securityCode, .captcha-answer {
+color: #09bebc;
+}
+#icon-reg-check-good, .manFlAvaFile {
+color: #09bebc;
+}
+#jkdjdkrt3 a{background:#09bebc;}
+
+/* форум
+------------------------------------------*/
+
+.name-title-the-forum, .polosa-progressa-next-title, .fs2-otvet span, .fs2-themes span, .names-informer, .stats-free-themes-1, .nomer-numbers, #knoka-cursor-1-1, #knoka-cursor-2-1, .polosa-ukazatel-stats, .iconka-vsego-online, .polnii-spisok-onlines, .polosa-ukazatel-stats-2, .polosa-ukazatel-stats-3, .names-and-forum-themes-title, .polosa-kras-new, .names-and-forum-themes-title-position, .postPSwithcesLink, .postPSwithcesLink:nth-child(4):before, .themlastpostchislo-1 span    {
+background: #09bebc;
+}
+.polosa-progressa-next-title:after {
+border-left-color: #09bebc;
+}
+.stats-free-themes-1:after, .names-and-forum-themes-title:after, .names-and-forum-themes-title-position:after, .themlastpostchislo-1 span:after {
+border-top-color: #09bebc;
+}
+.polosa-ukazatel-stats:after {
+border-right-color: #09bebc;
+}
+.data-statistik-title, .url-nex-statistik-title , .informes-icon-post-lider, .osnova-uchasniki-foruma, .osnova-themes-foruma, .osnova-otevtov-foruma, #newsusers {
+color: #09bebc;
+}
+.icons-home-them:hover, .fNavLink-new:hover, .type-flag-podpis, #subscribe:hover a  {
+color: #09bebc !important;
+}
+
+
+
+#knoka-cursor-1-0, #knoka-cursor-2-0 {
+background: #0EA7A4;
+}
+
+.polnii-spisok-onlines:hover, .postPSwithcesLink:hover {
+background: #0EA7A4;
+}
+
+
+.fNavLink-new:hover {
+border-bottom: 3px solid #09bebc;
+}
+.a-1-free-open a:hover, .a-2-free-open a:hover, .a-3-free-open a:hover, .a-4-free-open a:hover, .a-5-free-open a:hover, .a-0-free-open a:hover, .themes-cursor-versiya-1:hover {
+color: #09bebc !important;
+}
+.clear-stats {
+color: #09bebc;
+}
+.color-ic {color: #09bebc;}
+.unicum-next-data-themes-title {
+background: #09bebc;
+}
+.unicum-next-data-themes-title:after {
+border-bottom-color: #09bebc;
+}
+.polosa-unick-themes-all {
+border-left: 31px solid #09bebc;
+}
+.forum-last-post-class{
+background-image: url(/css/forum/forum-last-post3.png);
+}
+.fool-names-post, .deleted-post-foruma i, .redaktirovat-post-foruma i, .new-open-twit, .new-open-google, .new-open-facebook, .new-open-vk, .repost-knopka-block , .profile-user-names-post, .informations-post-ls, .informations-post-skype, .informations-post-www, .informations-post-icq {
+background: #09bebc;
+}
+.repost-knopka-block:after {
+border-bottom-color: #09bebc;
+}
+.new-vid-block-rating-next i , .knopka-2-soobsheniya i, .soobsheniya-names-href {
+color: #09bebc;
+}
+.entryAttachSize {
+color: #09bebc !important;
+}
+.deleted-redaktirovanie-post-forum:after {
+border-right-color: #09bebc;
+}
+#selectmodopt {
+background: url(/profile/img/ugolok-sector3.png) 174px 0px no-repeat #09bebc;
+}
+#selectfastnav {
+background: url(/profile/img/ugolok-sector3.png) 180px 0px no-repeat #09bebc;
+}
+.fool-names-post:after {
+border-bottom-color: #09bebc;
+}
+
+
+.infa-mini-profile-forum:after {
+border-bottom-color: #09bebc;
+}
+.names-new-themes-xtd-1, .names-new-themes-xtd-2, .infa-mini-profile-forum {
+background: #09bebc;
+}
+#frF3, #frF4, #frF6, #frF7 {
+box-shadow: inset 0px 0px 0px 1px #09bebc !important;
+}
+.top-options-post i , .botton-options-post i , #postPreviewicon, .top-icons-float-right-2, .top-icons-float-right-1, .top-icons-float-left-2, .top-icons-float-left-1 {
+color: #09bebc;
+}
+
+.cut-promo {background: #0EA7A4;}
+.promo-icon{background-color: #09bebc;}
+.promo-info .promo-text:after {border-right-color: #0EA7A4;}

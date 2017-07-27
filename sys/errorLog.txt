@@ -1,0 +1,25 @@
+Печалька: №8 (2017-07-27 16:45:10)
+Описание: Use of undefined constant test - assumed 'test'
+Файл: /var/www/software/Controllers/MainController.php
+Строка: 22
+---------
+Печалька: №8 (2017-07-27 16:45:32)
+Описание: Use of undefined constant test - assumed 'test'
+Файл: /var/www/software/Controllers/MainController.php
+Строка: 22
+---------
+Ошибка: №2 (2017-07-27 16:59:08)
+Описание: copy(https://pdacdn.com/userfiles/screens/29/28921/s_hqdefault.jpg): failed to open stream: Connection timed out
+Файл: /var/www/software/Models/PDAlife.php
+Строка: 81
+---------
+Ошибка: №8 (2017-07-27 17:00:58)
+Описание: Undefined variable: platform
+Файл: /var/www/software/Controllers/PDAlifeController.php
+Строка: 58
+---------
+Ошибка: №2 (2017-07-27 17:03:37)
+Описание: copy(https://pdacdn.com/userfiles/screens/28/27991/s_beholder.jpg): failed to open stream: Connection timed out
+Файл: /var/www/software/Models/PDAlife.php
+Строка: 81
+---------

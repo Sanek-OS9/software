@@ -1,0 +1,209 @@
+{% extends 'document.twig' %}
+
+{% block title %}{{ file.runame|title }} скачать бесплатно{% endblock %}
+
+{% block meta %}
+    {{ parent('meta') }}
+    <meta property="og:title" content="{{ file.runame }}" />
+    <meta property="og:image" content="http://{{ server_name }}{{ file.screen }}" />
+    <meta property="og:url" content="http://{{ server_name }}{{ file.link_view }}">
+
+    <meta name="twitter:card" content="summary"/>  <!-- Тип окна -->
+    <meta name="twitter:site" content="Скачай-ка.рф"/>
+    <meta name="twitter:title" content="{{ file.runame }}">
+    <meta name="twitter:image:src" content="http://{{ server_name }}{{ file.screen }}"/>
+    <meta name="twitter:domain" content="{{ file.link_view }}"/>
+
+    <link rel="canonical" href="http://{{ server_name }}{{ file.link_view }}" />
+    <meta name="description" content=""/>
+{% endblock %}
+
+{% block style %}
+    {{ parent('style') }}
+    <link type="text/css" rel="StyleSheet" href="/Static/css/coms-style.css" />
+{% endblock %}
+
+{% block content %}
+    <style>
+        .knopka-nastroyki {
+float: right;
+width: 65px;
+font-size: 26px;
+text-align: center;
+transition: all 0.3s cubic-bezier(0.42, 0, 1, 1) 0s;
+margin-righn: 50px;
+}
+        </style>
+    <div id="path">
+    <div class="cnt-bar">
+        <a class="home-page" href="/" title="Перейти на главную" rel="nofollow"><i class="fa fa-home"></i></a>
+        > <a href="/smartphone/{{ file.platform }}/page1/" rel="nofollow">{{ file.platform|upper }}</a>
+        > <a href="/smartphone/{{ file.platform }}/{{ file.type }}/page1/" rel="nofollow">{{ file.rutype|title }}</a>
+        > <a href="/smartphone/{{ file.platform }}/{{ file.genre }}/page1/" rel="nofollow">{{ file.rugenre }}</a>
+        <div class="dd_menu_2">
+
+<!--
+<a class="knopka-nastroyki" href="{{ file.link_view }}update" rel="nofollow" title="Обновить"><i class="fa fa-sliders"></i></a>
+-->
+<a href="javascript:history.back();" id="add_to_favorite"><i class="fa fa-sign-in"></i> Назад</a>
+
+
+
+</div>
+    </div>
+</div>
+<div id="middle-entry" class="overflow-hidden" itemscope itemtype="http://schema.org/ApplyAction">
+<!-- <middle> -->
+    <div class="entry-block">
+        <div class="content-entry">
+            <article class="entry e-page">
+                <div class="e-mes" style="margin-left: 0;">
+                    <h1 class="title1"><span itemprop="name">{{ file.runame|title }} </span></h1>
+                    <br />
+                    <div id="description3">
+                        <div id="description2" style="visibility: visible; opacity: 1;">
+                            <a href="{{ file.screens.0 }}" class="ulightbox no-bottom-border" rel="nofollow">
+                                <span class="knopki-color"><i class="fa fa-search-plus s-20"></i> Увеличить изображение</span>
+                            </a>
+                            {% if file.video %}
+                                <a href="#videoyou" class="ulightbox no-bottom-border">
+                                    <span class="knopki-color"><i class="fa fa-search-plus s-20"></i> Посмотреть видео обзор</span>
+                                </a>
+                            {% endif %}
+                        </div>
+                                <div id="description4"></div>
+                                <div id="description5"></div>
+                    </div>
+                </div>
+                <div class="targetarea diffheight good-new-play">
+                    <a id="multizoom1" href="{{ file.screen }}" class="ulightbox no-bottom-border" rel="nofollow"><img class="good-new-play2 rounded" id="multizoom2" alt="{{ file.runame }}" title="{{ file.runame }}" src="{{ file.screen }}" style="visibility: visible; opacity: 1; width: 708px; height: 398px;"></a>
+                </div>
+
+                <div>
+
+
+
+                    <div class="jcarousel-container jcarousel-container-horizontal1 multizoom2 thumbs" style="position: relative; display: block;">
+                        <div class="jcarousel-clip jcarousel-clip-horizontal" style="position: relative;">
+                            <ul id="item-photos" class="jcarousel-list jcarousel-list-horizontal" style="overflow: hidden; position: relative; top: 0px; margin: 0px; padding: 0px; left: 0px; width: 765px;">
+                                <li class="jcarousel-item jcarousel-item-horizontal jcarousel-item-9 jcarousel-item-9-horizontal" style="float: left; list-style: none;">
+                                        <a href="#" onclick="return false"><img class="screen" src="{{ file.screen }}" alt="{{ file.runame }} №{{ key }}"></a>
+                                </li>
+                                {% for key, screen in file.screens %}
+                                    <li class="jcarousel-item jcarousel-item-horizontal jcarousel-item-{{ key }} jcarousel-item-{{ key }}-horizontal" style="float: left; list-style: none;">
+                                        <a href="#" onclick="return false"><img class="screen" src="{{ screen }}" alt="{{ file.runame }} №{{ key }}"></a>
+                                    </li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </div>
+
+
+
+
+
+                </div>
+<script type="text/javascript">
+    /*$('.screen').mouseleave(function(){
+        $("#multizoom2").attr("src", "{{ file.screen }}");
+    });*/
+    $('.screen').click(function(event){
+        var src = event.target.getAttribute('src');
+        $("#multizoom2").attr("src", src);
+        $("#multizoom1").attr("href", src);
+    });
+</script>
+
+                {{ toOutput(file.description)|raw }}
+                <noindex>
+                    <div style="text-align:center;">
+                        <span class="ubar_info">Место для рекламы</span>
+                    </div>
+                </noindex>
+            <div class="exclam">
+                <i class="fa fa-exclamation-triangle"></i> Важно! Перед установкой убедитесь что приложение совместимо с вашей версией OC смартфона. Для проверки версии ОС зайдите в настройки и посмотрите информацию о вашем устройстве.
+            </div>
+                <div id="videoyou">{{ toOutput(file.video)|raw }}</div>
+                <hr>
+            </article>
+        </div>
+    </div>
+    <aside>
+        <div class="block">
+            <h3 class="title1 block-title"><span><i class="fa fa-info-circle"></i> Инфо</span></h3>
+            <div class="block-cnt">
+<div class="">
+<div class="meta l">
+<div class="rating-num"><b>{{ file.rating }}</b><span>/5</span></div>
+</div>
+<div class="rating-form r">
+<div class="rating-stars r">
+<ul id="uStarRating1209" class="uStarRating1209 u-star-rating-24" title="Рейтинг: {{ file.rating }}/5">
+<li class="u-current-rating uCurStarRating1209" id="uCurStarRating1209" style="width:{{ file.rating_percent }}%;"></li>
+</ul>
+</div>
+</div>
+</div>
+                <div class="meta-post"><i class="fa fa-eye"></i> Просмотров<span>{{ file.views }}</span></div>
+                <!--
+                <div class="meta-post"><i class="fa fa-comments"></i> Комментариев<span>0</span></div>
+                <div class="meta-post"><i class="fa fa-download"></i> Загрузок<span>0</span></div>
+                -->
+                <div class="meta-post"><i class="fa fa-anchor"></i> Размер файла<span>{{ file.size }}</span></div>
+
+                <!--<div class="meta-post"><i class="fa fa-clock-o"></i> Дата <span>10.05.2017</span></div>-->
+
+                <div class="meta-post"><i class="fa fa-windows"></i> OC <span>{{ file.version }}</span></div>
+            </div>
+        </div>
+
+        <div class="block">
+            <div class="block-cnt">
+                <div class="aside-label"><i class="fa fa-download"></i> Скачать файл</div>
+                    <div id="files">
+                        {% for link in file.links %}
+                            <a itemprop="url" class="download ld_share" href="{{ link.href }}"><i class="fa fa-arrow-circle-o-down l"></i> {{ link.title|raw }}</a>
+                        {% endfor %}
+                    </div>
+            </div>
+        </div>
+        <div class="block-cnt">
+            <div class="aside-label pbt ptt"><i class="fa fa-share-alt"></i> Поделиться</div>
+            <div class="share-block">
+                <div class="a2a_kit">
+                    <!-- uSocial -->
+                    <script async src="https://usocial.pro/usocial/usocial.js" data-script="usocial" charset="utf-8"></script>
+                    <div id="uSocial" class="text-center" data-pid="8089cef956a9783f85f54ef0c36d4371" data-type="share" data-options="round-rect,style1,absolute,horizontal,size24,eachCounter1,counter0" data-social="vk,gPlus,twi"></div>
+                    <!-- /uSocial -->
+                </div>
+                <br />
+            </div>
+
+            <section class="links">
+                <input id="link_1" type="radio" name="link" checked="checked">
+                <input id="link_2" type="radio" name="link">
+                <input id="link_3" type="radio" name="link">
+                <label for="link_1" id="link_l1"><i class="fa fa-circle"></i><br> Ссылка</label>
+                <label for="link_2" id="link_l2"><i class="fa fa-circle"></i><br> BB и HTML</label>
+                <label for="link_3" id="link_l3"><i class="fa fa-circle"></i><br> Превью</label>
+                <div style="clear:both"></div>
+                <div class="links_cont">
+                    <div id="link_c1">
+                        <input type="text" readonly="" value="http://скачай-ка.рф{{ file.link_view }}" onclick="select(this);" class="new-width" style="width: 165px;">
+                    </div>
+                    <div id="link_c2">
+                        <h6>BB-код</h6>
+                        <input type="text" readonly="" value="[url=http://скачай-ка.рф{{ file.link_view }}]{{ file.runame }}[/url]" onclick="select(this);" class="new-width" style="width: 165px;">
+                        <h6>HTML-код</h6>
+                        <input type="text" readonly="" value="<a href='http://скачай-ка.рф{{ file.link_view }}'>{{ file.runame }}</a>" onclick="select(this);" class="new-width" style="width: 165px;">
+                    </div>
+                    <div id="link_c3">
+                        <img src="{{ file.screen }}" alt="{{ file.runame }}" width="205px" />
+                        <input type="text" readonly="" value="<a href='http://скачай-ка.рф{{ file.link_view }}'><img src='http://скачай-ка.рф{{ file.screen }}' width='200px' alt='{{ file.runame }}' target='_blank'/></a>" onclick="select(this);" class="new-width" style="width: 165px;">
+                    </div>
+                </div>
+            </section>
+        </div>
+    </aside>
+</div>
+{% endblock %}

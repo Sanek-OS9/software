@@ -1,0 +1,31 @@
+{% extends 'document.twig' %}
+
+{% block slider %}
+{% endblock %}
+
+{% block content %}
+    {% set title = 'Игры для Айфона' %}
+    {% set platform = 'ios' %}
+    {% set item = files.ios %}
+    {% include 'main/.inc/list.full.twig' %}
+        
+    {% set title = 'Игры для Андроид' %}
+    {% set platform = 'android' %}
+    {% set item = files.android %}
+    {% include 'main/.inc/list.full.twig' %}
+        
+    <div class="cnt icn-wall-section">
+        <div class="l-block">
+            {% set title = 'Игры на Windows Phone' %}
+            {% set platform = 'windows' %}
+            {% set item = files.windows %}
+            {% include 'main/.inc/list.twig' %}
+         </div>
+        <div class="r-block">
+            {% set title = 'Игры на PSP' %}
+            {% set platform = 'psp' %}
+            {% set item = files.psp %}
+            {% include 'main/.inc/list.twig' %}
+        </div>
+    </div>
+{% endblock %}

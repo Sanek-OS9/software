@@ -1,0 +1,31 @@
+<div class="content">
+    <div id="allEntries">
+        {% for file in files %}
+            <div class="entryBlock" itemscope itemtype="http://schema.org/ApplyAction">
+                <div class="ent-prev col-xs-6 col-sm-4 col-md-3 col-lg-3">
+                    <div class="thumb">
+                        <img src="{{file.screen}}" class="post-image" alt="{{file.runame}}" />
+                        <span>
+                        <a href="{{file.screen}}" class="zoom ulightbox">Увеличить <i class="fa fa-expand"></i></a>
+                        <a href="/smartphone/{{file.path}}" rel="nofollow" class="more">Подробнее <i class="fa fa-arrow-right"></i></a>
+                        </span>
+                    </div>
+                    <a itemprop="url" class="ent-title" href="/smartphone/{{file.path}}" title="{{ file.runame }}"><span itemprop="name">{{file.runame|raw|slice(0, 30)}}</span> <i class="fa fa-chevron-right"></i></a>
+                    <a class="ent-title-list" href="/smartphone/{{file.path}}" rel="nofollow"><b>{{ file.runame|raw }}</b></a>
+                    <p>{{ file.description|striptags|slice(0, 370) }}...</p>
+                    <div class="item-meta">
+                        <div class="c-rating">
+                            <b>{{ file.rating }}</b><span>/5</span>
+                            <ul class="uStarRating1241 u-star-rating-24" title="Рейтинг: {{ file.rating }}/5">
+                                <li class="u-current-rating uCurStarRating1241" style="width:{{ file.rating_percent }}%;"></li>
+                            </ul>
+                        </div>
+                        <span><i class="fa fa-eye" title="Просмотров"></i> <span class="label">Просмотров:</span><div>{{ file.views|number_format }}</div></span>
+                        <span><i class="fa fa-{{ file.icon }}" title="OC"></i> <span class="label">OS:</span><div>{% if file.platform == 'windows' %}{{ file.platform|title }}{% else %}{{ file.version|striptags|slice(0, 11) }}{% endif %}</div></span>
+                        <span><i class="fa fa-star" title="Рейтинг {{ file.rating }} из 5"></i> <span class="label">Рейтинг:</span><div>{{ file.rating }}</div></span>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>

@@ -1,0 +1,47 @@
+
+{% extends 'base.twig' %}
+
+{% import '.inc/test.twig' as forms %}
+{% block title %}{{ title }}{% endblock %}
+
+
+{% block content %}
+    <script type="text/javascript">
+        function MyClass()
+        {
+            this.constructor = function(name)
+            {
+                this.name = name;
+            }
+
+        }
+        var test = new MyClass();
+        test.constructor('rtg');
+        console.log(test.name);
+    </script>
+    <div style="float: left; width: 200px;">
+        <img src="/Static/files/torrent/{{ file.platform }}/{{ file.genre }}/{{ file.name }}.jpg" align="center" alt="скачать торрент " title="скачать торрент " class="article-img-full entry-image">
+     </div>
+     <div style="padding-left: 215px;">
+        <p style="color: #f3453c; margin-bottom: 5px;">Подробная информация:</p><br><br>
+        <hr class="light" style="margin-bottom: 2px;">
+        <table width="100%" cellspacing="0" cellpadding="0" id="article-film-full-info">
+            <tbody>
+                <tr>
+                    <td>Размер:</td>
+                    <td><span class="stat-quantity">{{ file.size }}</span></td>
+                </tr>
+                <tr>
+                    <td>Просмотров</td>
+                    <td><span class="stat-quantity">{{ file.views|number_format }}</span></td>
+                </tr>
+                <tr>
+                    <td>Рейтинг торрента:</td>
+                    <td>{{ file.rating }}<span> / 5</span></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div style="clear: both;"></div>
+    {{ file.description|raw }}
+{% endblock %}

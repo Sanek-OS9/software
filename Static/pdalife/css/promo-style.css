@@ -1,0 +1,46 @@
+.cut-promo {overflow: hidden;}
+.promo-icon{background-position: -50px -60px;background-repeat: no-repeat; width: 279px;float: left;}
+.promo-icon img{opacity:0.8;display: block;}
+.promo-info{display: table;padding: 10px 30px 15px 30px;float: right;width: 661px;color: #fff;text-align: justify;white-space: normal;min-height: 270px;}
+.promo-text{vertical-align: middle;display: table-cell;position: relative;}
+.promo-text h1{color: #fff;}
+.promo-info .promo-text:after {left: -60px;top: 28%;border: solid transparent;content: " ";height: 0;width: 0;position: absolute;pointer-events: none;border-color: rgba(136, 183, 213, 0);border-width: 15px;margin-top: -15px;}
+.promo-info p{line-height: 18px;}
+.promo-more {color: #fff!important;line-height: 38px;display: inline-block;text-align: center;border-radius: 3px;padding: 0 40px;border: solid 1px #fff;margin-top: 5px;margin-right: 15px;float: left;}
+.promo-more:hover{opacity:0.8;}
+
+
+.promo-share{float: right;margin-top: 10px;}
+
+
+.mb20 {margin-bottom: 20px;}
+
+.c-windows_7 {background-image: url(/infoimg/c_windows_7.png);background-position: -50px 0 !important;}
+.c-windows_8 {background-image: url(/infoimg/c_windows_8.png);}
+.c-windows_7_sp {background-image: url(/infoimg/c_windows_7_sp.png);}
+.c-windows_10 {background-image: url(/infoimg/c-windows_10.png);}
+
+.c-walls{background-image: url(/infoimg/c_walls.png);}
+.c-dreamscene{background-image: url(/infoimg/c_dreamscene.png);}
+.c-screensaver{background-image: url(/infoimg/c_screensaver.png);}
+.c-logon{background-image: url(/infoimg/c_logon.png);}
+.c-boot_screens {background-image: url(/infoimg/c_boot_screens.png);}
+.c-cursor {background-image: url(/infoimg/c_cursor.png);}
+.c-cursorfx {background-image: url(/infoimg/c_cursorfx.png);}
+.c-7tsp {background-image: url(/infoimg/c_7tsp.png);}
+.c-png_ico {background-image: url(/infoimg/c_png_ico.png);}
+.c-iconpackager {background-image: url(/infoimg/c_iconpackager.png);}
+.c-icons {background-image: url(/infoimg/c_icons.png);}
+
+.c-rainmeter {background-image: url(/infoimg/c_rainmeter.png);}
+.c-xwidget {background-image: url(/infoimg/c_xwidget.png);}
+.c-aimp {background-image: url(/infoimg/c_aimp.png);}
+.c-winamp {background-image: url(/infoimg/c_winamp.png);}
+.c-wmp {background-image: url(/infoimg/c_wmp.png);}
+.c-rocketdock {background-image: url(/infoimg/c_rocketdock.png);}
+.c-chrome {background-image: url(/infoimg/c_chrome.png);}
+.c-winrar {background-image: url(/infoimg/c_winrar.png);}
+.c-programs {background-image: url(/infoimg/c_programs.png);}
+.c-gadgets {background-image: url(/infoimg/c_gadgets.png);background-position: -50px 0 !important;}
+.c-start_button {background-image: url(/infoimg/c_start_button.png);}
+.c-sounds {background-image: url(/infoimg/c_sounds.png);}

@@ -1,0 +1,24 @@
+<li>Игры</li>
+<li><a href="/smartphone/{{ platform }}/action/page1/"><span>Экшен</span></a></li>
+<li><a href="/smartphone/{{ platform }}/arkady/page1/"><span>Аркады</span></a></li>
+<li><a href="/smartphone/{{ platform }}/rpg/page1/"><span>RPG</span></a></li>
+<li><a href="/smartphone/{{ platform }}/strategii/page1/"><span>Стратегии</span></a></li>
+<li><a href="/smartphone/{{ platform }}/racing/page1/"><span>Гонки</span></a></li>
+<li><a href="/smartphone/{{ platform }}/golovolomki/page1/"><span>Головоломки</span></a></li>
+<li><a href="/smartphone/{{ platform }}/nastolnye/page1/"><span>Настольные</span></a></li>
+<li><a href="/smartphone/{{ platform }}/sportivnye/page1/"><span>Спортивные</span></a></li>
+<li><a href="/smartphone/{{ platform }}/drugie/page1/"><span>Другие игры</span></a></li>
+{% if platform != 'psp' %}
+    <li>Программы</li>
+    <li><a href="/smartphone/{{ platform }}/sistemnye/page1/"><span>Системные</span></a></li>
+    <li><a href="/smartphone/{{ platform }}/multimedia/page1/"><span>Мультимедиа</span></a></li>
+    <li><a href="/smartphone/{{ platform }}/drugie2/page1/"><span>Другие</span></a></li>
+    {% if platform != 'ios' %}
+        <li>Украшательства</li>
+        <li><a href="/smartphone/{{ platform }}/vidzgety/page1/"><span>Виджеты</span></a></li>
+        <li><a href="/smartphone/{{ platform }}/interface/page1/"><span>Интерфейс</span></a></li>
+        {% if platform != 'windows' %}
+            <li><a href="/smartphone/{{ platform }}/zgivye-oboi/page1/"><span>Живые обои</span></a></li>
+        {% endif %}
+    {% endif %}
+{% endif %}

@@ -1,0 +1,44 @@
+@charset "utf-8";
+
+body#mainContainer {
+	padding: 40px 0;
+}
+
+#container {
+	width: 1000px;
+	margin: 0 auto;
+	box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+#slider, .iviewSlider, .slide {
+	width: 1000px !important;
+}
+
+.content-ls {
+border-radius: 5px;
+}
+
+.headers-ls {
+border-radius: 0px 5px 0px 0px;
+}
+
+.content-left-ls {
+border-radius: 5px 0px 0px 5px;
+}
+ 
+.content-right-ls {
+border-radius: 0px 5px 5px 0px;
+}
+
+.headers-gl { 
+border-radius: 5px 0px 0px 0px;
+}
+
+.content-ls {
+  top:40px;
+  bottom:40px; 
+}
+
+.lol  {
+top: 110px;
+bottom: 40px;
+}

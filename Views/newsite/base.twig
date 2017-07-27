@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="utf-8">
+        <title>{% block title %}Страница{% endblock %}</title>
+        <link type="text/css" rel="stylesheet" href="/Static/rutracker/css/style.css" />
+        <link rel="shortcut icon" href="/Static/rutracker/favicon.ico" />
+        <link href="http://rutracker.co.ua/style/style.css" type="text/css" rel="stylesheet" />
+        <link href="http://rutracker.co.ua/style/engine.css" type="text/css" rel="stylesheet" />
+        <link type="text/css" rel="stylesheet" href="http://rutracker.co.ua/.s/src/base.css" />
+    	<link type="text/css" rel="stylesheet" href="http://rutracker.co.ua/.s/src/layer7.css" />
+
+        <script type="text/javascript" src="http://rutracker.co.ua/.s/src/jquery-1.7.2.js"></script>
+
+        <link type="text/css" rel="stylesheet" href="http://rutracker.co.ua/.s/src/ulightbox/ulightbox.css" />
+    	<script type="text/javascript" src="http://rutracker.co.ua/.s/src/ulightbox/ulightbox.js"></script>
+    </head>
+    <body>
+        {% block header %}
+        <div class="header-menu-bg">
+         <div class="header-menu">
+         <ul id="nav">
+         <li><a href="/torrent/" title="торрент файлы"><span>01.</span>Главная</a></li>
+
+         {% for item in navigation %}
+             <li class="dropIt"> <a href="#"><span>{{ item.num }}.</span> {{ item.title }}</a>
+             <div style="width: 315px;"><div>
+                 <p>{{ item.opis }}</p>
+                 <ul style="border-right: 1px solid #d9d9d9; width: 140px;">
+                     {% for list in item.links|slice(0, 14) %}
+                             <li><a href="{{ list.link }}">{{ list.title }}</a></li>
+                     {% endfor %}
+                 </ul>
+                 <ul style="border-left: 1px solid #d9d9d9; width: 140px;">
+                     {% for list in item.links|slice(14, item.links|length) %}
+                             <li><a href="{{ list.link }}">{{ list.title }}</a></li>
+                     {% endfor %}
+                 </ul>
+         </div></div>
+         </li>
+         {% endfor %}
+</ul>
+         </div>
+        </div>
+
+
+{% endblock %}
+
+<div class="global-container">
+    <div class="content-left-column">
+        <hr>
+        <h1>{{ block('title') }}</h1>
+        <hr>
+        {% block sort %}{% endblock %}
+    {% block content %}{% endblock %}
+</div>
+    {% block navigation %}
+        <div class="content-right-column">
+            <div class="block-title block-red">
+                <div class="icon-menu"></div>
+                <div class="block-title-text">Навигация</div>
+            </div>
+            <ul class="block-menu">
+                <li><a href="/torrent/" title="открытый торрент трекер"><span style="color:red">01.</span>Главная страница</a></li>
+                {% for item in navigation %}
+                    <li>
+                        <a class="accordion"><span style="color:red">{{ item.num }}.</span>{{ item.title }}</a>
+                        <div class="block-menu2">
+                            <ul class="block-menu2">
+                                {% for list in item.links %}
+                                    <li><a href="{{ list.link }}">{{ list.title }}</a></li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </li>
+                {% endfor %}
+            </ul>
+            <div class="block-separator"></div>
+        </div>
+    {% endblock %}
+</div>
+<div class="footer-bg1">
+    <div class="footer-bg1-content">
+        <a href="/">Главная страница</a>
+        <a rel="nofollow" href="/sitemap.xml">Sitemap.xml</a>
+    </div>
+</div>
+<div class="footer-separator"></div>
+<div class="footer-bg2">
+    <div class="footer-bg2-content">
+        Copyright © 2017 <a href="/" alt="открытый торрент трекер" title="открытый торрент трекер" rel="nofollow" style="font-weight: bold;">DOMAIN.COM.UA - открытый торрент трекер</a>
+        <span class="separator">/</span>
+        Мы не храним "<a href="#" alt="торрент файлы" title="торрент файлы" rel="nofollow">торрент файлы</a>" на нашем сервере, у нас только хэш-суммы торрент ссылок.
+        <div class="description">
+            Администрация не несет ответственности за размещенные на сайте материалы.
+        </div>
+    </div>
+</div>
+
+        <script src="http://rutracker.co.ua/js/jquery.roundabout.min.js"></script>
+        <script src="http://rutracker.co.ua/js/roundabout.js"></script>
+        <script type="text/javascript" src="http://rutracker.co.ua/js/libs.min.js"></script>
+    </body>
+</html>

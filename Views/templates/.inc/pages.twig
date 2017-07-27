@@ -1,0 +1,24 @@
+{% if pages_all > 0 %}
+    {% set range = 4 %}
+    {% set idx_fst = max(pages_this - range, 1) %}
+    {% set idx_lst = min(pages_this + range, pages_all) %}
+    <div style="text-align:center;">
+        <span class="pagesBlockuz1">
+            {% if pages_this > range + 1 %}
+                <a class="swchItem" href="{{ pages_link }}page1/"><span>1</span></a> ... 
+            {% endif %}
+
+            {% for i in idx_fst..idx_lst %}
+                {% if i == pages_this %}
+                    <b class="swchItemA"><span>{{ i }}</span></b>
+                {% else %}
+                    <a class="swchItem" href="{{ pages_link ~ 'page' ~ i }}/"><span>{{ i }}</span></a>
+                {% endif %}
+            {% endfor %}
+
+            {% if pages_this < pages_all - range %}
+                ... <a class="swchItem" href="{{ pages_link ~ 'page' ~ pages_all }}/"><span>{{ pages_all }}</span></a>
+            {% endif %}
+        </span>
+    </div>
+{% endif %}

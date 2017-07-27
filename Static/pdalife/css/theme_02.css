@@ -1,0 +1,1023 @@
+@charset "utf-8";
+
+body#mainContainer, #container, #mainContainer-mob {
+	background: #4B4C4D;
+	color: #e8e8e8;
+}
+
+h1, h2, h3, h4, h5, h6, .aside-label, .entr-heading, .numb a:hover i{
+	color: #fff;
+}
+#logo{color: #e8e8e8;}
+#logo span{color: #e8e8e8;}
+
+.content-entry a:hover, .comm-block a:hover, .forumContent a:hover, .forum-coms-inf a:hover, .thenews a:hover, .rem-reg a:hover, .content-spisok-users a:hover, .catSortLink:hover, .content a:hover, .fq-einfo a:hover, .faq-entry a:hover, .tabs-content-2 a:hover, .reg-soc-sety a:hover, .catinfo a:hover {
+color: #fff;
+}
+#container textarea, #container input[type="text"], #container input[type="password"] {
+	background: #5D5D5D;
+        box-shadow: inset 0px 0px 0px 1px #5D5D5D;
+}
+#container input[type="button"]:hover, #container input[type="submit"]:hover, #container input[type="reset"]:hover {
+	background: #434445;
+}
+#top {
+	background: #5c5c5c;
+}
+#container > header {
+	background: #4b4c4d;
+}
+.logo a {
+	color: #fff !important;
+}
+nav ul li a:hover, nav ul li a.uMenuItemA, li.active > a {
+	background: #525252;
+}
+nav ul li a, .catSortLink {
+	color: #e8e8e8 !important;
+}
+#slider {
+	background: #4b4c4d;
+}
+.info-block {
+	background: #5c5c5c;
+}
+.h-service {
+	background: #434446;
+	border-bottom: none;
+}
+.title1, .h-title-heading {
+	box-shadow: inset 0 -2px #6e6e6e;
+}
+.service-icon {
+	background: #6e6e6e;
+}
+a.more3 {
+	background: #6e6e6e;
+	color: #e8e8e8 !important;
+}
+a.title-more:hover {
+	background: #6e6e6e;
+}
+.h-entry h3 a {
+	color: #fafafa;
+}
+.accordion li > h4 {
+	background-color: #4b4c4d;
+}
+.a-descr, .r-content {
+	background: #6e6e6e;
+}
+.r-bottom {
+	background: url(/Static/pdalife/images/r-bottom-dark.png) left no-repeat;
+}
+.r-author img {
+	border: 2px solid #4b4c4d;
+}
+.r-date {
+	color: #e8e8e8;
+	background: #4b4c4d;
+}
+.r-pages > span a {
+	background-color: #6e6e6e;
+}
+#clients {
+	background: #393A3B;
+}
+.progress-bars li {
+	background: #6e6e6e;
+}
+.member-soc {
+	background: #4b4c4d;
+}
+.notice-message {
+	border: none;
+	background: #6e6e6e;
+}
+.logo-404 a {
+	color: #fafafa;
+}
+#cnt-404 #path {
+	background: #4b4c4d !important;
+}
+.error-404 {
+	color: #fafafa;
+}
+.descr-404 {
+	color: #a7a7a7;
+}
+.che-delat-404 {
+	border-top: 2px solid #6e6e6e;
+	color: #a7a7a7;
+}
+.che-delat-404 a {
+	color: #a7a7a7 !important;
+	border-bottom: 1px dotted #a7a7a7;
+}
+
+.list1 li {background: url(/Static/pdalife/images/list1-dark.png) left no-repeat;}
+.list2 li {background: url(/Static/pdalife/images/list2.png) left no-repeat;}
+.list3 li {background: url(/Static/pdalife/images/list3-dark.png) left no-repeat;}
+.list4 li {background: url(/Static/pdalife/images/list4-dark.png) left no-repeat;}
+.list5 li {background: url(/Static/pdalife/images/list5-dark.png) left no-repeat;}
+
+.quoteMessage, .quote2,{
+	border: none;
+	background: #6e6e6e;
+}
+.clear-btn {
+	background: #a7a7a7 !important;
+}
+.clear-btn:hover {
+	background: #4b4c4d !important;
+}
+.block-cnt .small-contact, .block-cnt .small-contact h5 {
+	color: #e8e8e8 !important;
+}
+.categories {
+	background: #585858;
+}
+.categories a {
+	color: #e8e8e8 !important;
+	text-decoration: none !important;
+}
+.details, .details a {
+	color: #a7a7a7 !important;
+}
+.pluso-cnt {
+	border-bottom: 1px solid #6e6e6e;
+}
+.user-ava {
+	border: 1px solid #e8e8e8;
+}
+.b.comm-user a {
+	color: #4d4d4d !important;
+}
+.entry {
+	border-bottom: 1px solid #6e6e6e;
+}
+.e-mes h1 a {
+	color: #fafafa !important;
+}
+.block-cnt li a, .block-cnt .catsTd a {
+	color: #e8e8e8 !important;
+}
+.eTag {
+	color: #e8e8e8 !important;
+	background: #6e6e6e;
+}
+.rev-cnt {
+	border-bottom: 1px solid #e8e8e8;
+}
+.rev-right .r-bottom {
+	background: url(/Static/pdalife/images/r-bottom-right-dark.png) right no-repeat;
+}
+.chat-mes {
+    border: none;
+    background: #6e6e6e;
+}
+hr {
+	background: #6e6e6e;
+}
+.calTable td {
+	border: 1px solid #6e6e6e;
+}
+.threadsDetails, .postTdTop, .gTable tr {
+	background: #585858;
+}
+.gTableSubTop {
+	background: #616161;
+}
+
+.swchItemA span, .swchItem span, .swchItemA1 span, .swchItem1 span {
+color: #E8E8E8;
+background: #6e6e6e;
+}
+
+.thumb {
+ background: #585858;
+}
+
+.u-rate, .meta-post span, .meta-post a, .faq-block i {
+background: #585858;
+}
+.meta-post {border-bottom: 1px solid #464344;}
+.arrow_box{
+background: #404041;
+}
+.rated, .tags-b {
+background: #404041;
+}
+.u-rate-top::after {
+border-bottom-color: #585858;
+}
+.arrow_box-top::after {
+border-top-color: #404041;
+}
+#description3, .jcarousel-clip {background: #585858;}
+.knopki-color {color: #AAAAAA;}
+.knopki-color:hover{color: #C3C3C3;}
+.aside-label i, .meta-post i, .block-title i {color: #A7A7A7;}
+.comm-mess, .comm-rating i {background: #585858;}
+.comm-mess::after  {border-right-color: #585858;}
+
+
+.ent-title {background: #5F5F5F;color: #E8E8E8 !important;}
+.ent-title:hover{background: #616161;}
+.item-meta {background: #575757;color: #A7A7A7;}
+.item-meta span{border-right: 1px solid #5F5F5F;}
+.catName {background: #4B4C4D;}
+
+.dd_menu_1:hover .drop, .dd_content_1  {background: #414141;}
+.dd_cell_1 {border: 3px solid #414141;}
+.profile-dd span {background: #4B4C4D;}
+.profile-dd{border-bottom: 1px solid #545556;}
+.user-icons:hover {background: #525252;}
+
+.wysibb {background: #383838!important;}
+.wysibb-text textarea {background:#5D5D5D!important;}
+.wysibb-body {background: #383838!important;color: #E8E8E8!important;}
+
+
+.share-block i, .more1:hover, .more2:hover {background: #585858;}
+.go-top, .signin:hover {background: #4b4c4d;}
+.statistics-user-l div {color: #868686}
+.bottom {background: #383838;color: #7a7a7a;}
+.bottom a {color: #7A7A7A !important;}
+
+nav ul li ul {background: #414141;}
+nav ul li ul li a {border-bottom: 1px solid #585858;}
+nav ul li ul li a:hover {background: #3B3B3B !important;}
+.postTdTop, .postTdTopdetals {background: #606060!important;}
+.statusBlock, .repHistory {background: #4B4C4D;}
+.postTdInfo, .postip1 {background: #555555 !important;}
+.switchDigit, .switchBack, .switchNext {background: #555555;}
+
+.codeMessage {background: #606060 url("/Static/pdalife/images/code.png") no-repeat 10px 7px!important;}
+.quoteMessage {background: #6E6E6E url("/Static/pdalife/images/quote1.png") no-repeat 10px 7px!important;}
+.h-title{color: #E8E8E8 !important;}
+
+
+.coms-inf-content {background:rgba(20, 20, 20, 0.90);color: #fcfcfc;}
+.coms-inf-content:after {border-top-color: rgba(20, 20, 20, 0.90);}
+.coms-inf li:nth-child(odd), .forum-content-inf:nth-child(even){
+background: #585757;
+}
+.coms-inf li:nth-child(even), .forum-content-inf:nth-child(odd){
+background: #515151;
+}
+.replies {
+background: #5F5F5F;
+}
+.eh-thumb a.zoom,.eh-thumb a.more, .th-thumb a.zoom,.th-thumb a.more,.thumb span a.zoom , .thumb span a.more{background:#383838;}
+.th-thumb a.zoom:hover,.th-thumb a.more:hover, .eh-thumb a.zoom:hover,.eh-thumb a.more:hover,.thumb a.zoom:hover, .thumb a.more:hover{background:#4B4C4D;}
+
+.block-colors-profile {
+background: #5f5f5f;
+}
+.content-left-ls {
+background: #575757;
+}
+.pmCatLink, #activ-menu-themes-ls4 a {
+border-top: solid 1px #4b4c4d;
+border-bottom: solid 1px #4b4c4d;
+}
+.pmCatLinkActive {
+background: #4b4c4d;
+}
+.left:hover {
+background: #5f5f5f;
+}
+.conter-polosa, .bar_bg, .ugolo4ek {
+background: #4b4c4d;
+}
+.ugolo4ek:after {
+ border-top-color: #4b4c4d;
+}
+#avatar-ls-my {
+background: #4b4c4d;
+}
+.thenews, .lol, .pop-up, .lol2 {
+background: #4b4c4d;
+}
+.soobshenuya, .cleardelit {
+background: #575757;
+}
+.soobshenuya:hover {
+background: #5f5f5f;
+}
+.user_avatar img{
+border: solid 2px #4b4c4d;
+}
+#PMtoUser, #pmSubject, #newmess input[type="text"] {
+background: #5D5D5D;
+box-shadow: inset 0px 0px 0px 1px #5D5D5D;
+}
+.offline-pm, .online-pm {
+border: solid 1px #4b4c4d;
+}
+.vscrollerbase {
+background: #5f5f5f;
+}
+.goods-prozr {
+background: url(/profile/img/goods-prozr.png) 0px 0px;
+}
+.goods-prozr2 {
+background: url(/profile/img/goods-prozr2.png) 0px 0px;
+}
+#avatar-ls-my2 img {
+border: 5px solid #4B4C4D;
+}
+
+
+.login-c{background: #4b4c4d;}
+.log-field span,.log-submit {background: #585858;}
+.log-submit:after {border-bottom-color: #585858;}
+.rem-reg a:first-child {border-right: 1px solid #585858;}
+.soc-login, .loginField {background: #383838;}
+.loginField {box-shadow: inset 0px 0px 0px 1px #383838;}
+
+.ent-prev{background: #5C5C5C;}
+.c-rating {background: #5C5C5C!important;}
+.item-meta div {background: #616161;}
+.c-rating {color: #E8E8E8;}
+.sort-count {box-shadow: inset 0px -2px #6E6E6E;}
+
+
+.links label i{background:#585858;color:#A7A7A7;}
+.thumbs {border-left: 22px solid #585858;border-right: 22px solid #585858;}
+
+.offline-pm-com, .online-pm-com {border: 2px solid #4B4C4D;}
+
+
+.content-users {
+background: #5f5f5f;
+}
+.content-spisok-users {
+background: #4b4c4d;
+}
+.informations-and-users {
+background: #5c5c5c;
+}
+.users-avatars-infor img {
+border: solid 2px #4b4c4d;
+}
+.users-ranks-infor {
+background: #4b4c4d;
+}
+.osnova-search {
+border-top: 1px solid #4b4c4d;
+}
+#goods-gg {
+background: #4b4c4d;
+}
+.content-users {
+background: #5f5f5f;
+}
+.content-spisok-users {
+background: #4b4c4d;
+}
+.informations-and-users {
+background: #5c5c5c;
+}
+.users-avatars-infor img {
+border: solid 2px #4b4c4d;
+}
+.users-ranks-infor {
+background: #4b4c4d;
+}
+.osnova-search {
+border-top: 1px solid #4b4c4d;
+}
+#goods-gg {
+background: #4b4c4d;
+}
+#stroka-poiska {
+background: #4B4C4D;
+box-shadow: inset 0px 0px 0px 1px #4B4C4D;
+}
+.ostabs label{background:#404041;}
+#ostab_1:checked ~ #ostab_l1,#ostab_2:checked ~ #ostab_l2{background:#585858;color: #e8e8e8;}
+#ostab_l1, #ostab_l2{color: #A7A7A7;}
+.ostabs_cont{background:#585858;}
+.bs-show, #bs-previev{background: #585858;color: #AAAAAA!important;}
+
+
+.fq-thumb {background: #585858;}
+.fq-thumb:hover {background: #5C5C5C;}
+
+.fq-rate, .fq-einfo{background: #585858;}
+.fq-block:nth-child(2){border-right: 1px solid #6E6E6E;}
+
+
+
+
+.xw-plain, .xw-resize, .xw-active {
+ color:#E5E5E5;
+ box-shadow:0px 0px 0px 4px rgba(0, 0, 0, 0.25)
+}
+.xw-hdr {
+ color: #FFF!important;
+}
+.xw-hdr-text {
+color: #fff!important;
+}
+ .xw-bc, .xw-mr, .xw-bl, .xw-br, .xw-ml, .xw-mc {
+ background:#515151 !important;
+}
+legend {background-color: #515151!important;}
+ .xw-tl, .xw-tr, .xw-tc {
+ color: #FFF!important;
+}
+.myWinPollTd {
+ border: 1px solid #FFF!important;
+}
+.myBtnLeft, .myBtnRight, .myBtnLeftA, .myBtnRightA {display: none !important;}
+.myBtnCenter, .myBtnCenterA {background: none !important;}
+.myBtnCont a:link {
+color:#fff!important;
+}
+
+.myWinCont a.pgSwch:hover {
+color: #fff!important;
+}
+.myWinCont textarea {
+background: #383838!important;
+}
+.myWinCont textarea, .cuzadpn input,.myWinCont input[type='text'], .myWinCont input[type='password'] {
+border: none!important;
+background: #383838!important;
+box-shadow: inset 0 0 0 1px #383838;
+}
+ .myWinTD1, .myWinTD2 {
+background: #515151!important;
+}
+.u-menu .u-menuitemhl {
+background: #515151!important;
+}
+.u-menuvsep {
+background: #515151!important;
+}
+.cuzadpn {
+background: #666666!important;
+}
+.pbarContainer {
+background: #515151!important;
+}
+.u-menuitemhl .admBarLeft, .u-menuitemhl .admBarRight, .u-menuitemhl .admBarCenter{
+background: #515151!important;
+}
+
+
+
+.knopka-li-deleted {
+border-bottom: 1px solid #4B4C4D;
+}
+.knopka-li-deleted-1 {
+border-top: solid 1px #4b4c4d;
+}
+.knopka-li-deleted:hover  {
+background: #5F5F5F;
+}
+li .selected {
+background: #4b4c4d;
+}
+.quit-knopka-a:hover {
+background: #5F5F5F!important;
+}
+.quit-knopka {
+border-top: solid 1px #4b4c4d;
+}
+.name-imya-my-ty, .name-imya-my-ty-2 {
+color: #FFFFF;
+}
+.knopka-my-site-perehod,.knopka-my-vk-perehod,.knopka-my-icq-perehod,.knopka-my-skype-perehod {
+background: #4b4c4d;
+}
+.info-profile-users-the {
+background: #4b4c4d;
+border-bottom: 1px solid #5f5f5f;
+border-right: 1px solid #5f5f5f;
+}
+.info-stats-users-the {
+background: #4b4c4d;
+border-bottom: 1px solid #5f5f5f;
+}
+.profile-lol {
+background: #4b4c4d;
+}
+.info-block-osnova-content-2 {
+color: #E8E8E8;
+}
+.names-block-stats {
+background: #575757;
+}
+.delete-border-xmm {
+border-left: 1px solid #575757;
+}
+#vertical-ticker{
+border-left: 1px solid #5f5f5f;
+background: #4b4c4d;
+}
+.prev-next-users {
+background: #4b4c4d;
+}
+#ticker-previous, #ticker-next, .infa-group-test {
+background: #575757;
+}
+#ticker-previous i, #ticker-next i, .infa-group-test i {
+color: #fff;
+}
+.block-rangs {
+border-bottom: 1px solid #5f5f5f;
+}
+.profile-tab-user-id {
+border-bottom: 1px solid #5f5f5f;
+}
+.knopka-minus-reputation, .knopka-plus-reputation  {
+background: #5f5f5f;
+}
+.help-rank-vopros {
+background: #575757;
+}
+.help-rank-vopros i {
+color: #ffffff;
+}
+.rank-ts-gd {
+background: #575757;
+}
+.reputatin-cifri {
+color: #ffffff;
+background: #4b4c4d;
+}
+.centrirovan-block-orogress {
+background: #575757;
+}
+
+.centrirovan-block-orogress-backngraund {
+background: url(/profile/img/progress-bar.png);
+}
+
+#avatar-pr-my .user_avatar img{
+border: 4px solid #4b4c4d!important;
+}
+
+ span.group2{border: 2px solid #4b4c4d;}
+ span.group4{border: 2px solid #4b4c4d;}
+ span.group1{border: 2px solid #4b4c4d;}
+ span.group3{border: 2px solid #4b4c4d;}
+ span.group255{border: 2px solid #4b4c4d;}
+ span.group251{border: 2px solid #4b4c4d;}
+
+/* Вкладки профиля
+------------------------------------------*/
+
+.names-aktivnost-block-1, .names-aktivnost-block-2 {
+background: #575757;
+color: #ffffff;
+}
+.knopka-bloka-aktivnost-1, .knopka-bloka-aktivnost-2, .knopka-bloka-aktivnost-3, .knopka-bloka-aktivnost-4, .knopka-bloka-aktivnost-5, .knopka-bloka-aktivnost-6 {
+background: #575757;
+}
+
+.knopka-bloka-aktivnost-1:after, .knopka-bloka-aktivnost-2:after, .knopka-bloka-aktivnost-3:after, .knopka-bloka-aktivnost-4:after, .knopka-bloka-aktivnost-5:after, .knopka-bloka-aktivnost-6:after {
+border-top-color: #575757;
+}
+.nazvanie-knopki {
+color: #ffffff;
+}
+
+.knopka-bloka-aktivnost-1:hover, .knopka-bloka-aktivnost-2:hover, .knopka-bloka-aktivnost-3:hover, .knopka-bloka-aktivnost-4:hover, .knopka-bloka-aktivnost-5:hover, .knopka-bloka-aktivnost-6:hover {
+background: #5f5f5f;
+}
+
+.knopka-bloka-aktivnost-1:hover:after, .knopka-bloka-aktivnost-2:hover:after, .knopka-bloka-aktivnost-3:hover:after, .knopka-bloka-aktivnost-4:hover:after, .knopka-bloka-aktivnost-5:hover:after, .knopka-bloka-aktivnost-6:hover:after {
+border-top-color: #5f5f5f;
+}
+
+.krug-aktiv-1, .krug-aktiv-2, .krug-aktiv-3, .krug-aktiv-4, .krug-aktiv-5, .krug-aktiv-6 {
+background: #575757;
+border: 3px solid #4b4c4d;
+color: #ffffff;
+}
+
+.knopka-bloka-aktivnost-1:hover .krug-aktiv-1, .knopka-bloka-aktivnost-2:hover .krug-aktiv-2, .knopka-bloka-aktivnost-3:hover .krug-aktiv-3, .knopka-bloka-aktivnost-4:hover .krug-aktiv-4, .knopka-bloka-aktivnost-5:hover .krug-aktiv-5, .knopka-bloka-aktivnost-6:hover .krug-aktiv-6 {
+background: #5f5f5f;
+}
+
+.aktivnost-polosa-1, .aktivnost-polosa-2, .aktivnost-polosa-3, .aktivnost-polosa-4 {
+background: #575757;
+}
+
+.blokz-aktivnost-1, .blokz-aktivnost-2, .blokz-aktivnost-3, .blokz-aktivnost-4 {
+background: #575757;
+}
+
+.blokz-aktivnost-1:after, .blokz-aktivnost-2:after, .blokz-aktivnost-3:after, .blokz-aktivnost-4:after {
+border-right-color: #575757;
+}
+
+.krugz-aktiv-1, .krugz-aktiv-2, .krugz-aktiv-3, .krugz-aktiv-4 {
+background: #575757;
+border: 3px solid #4b4c4d;
+}
+
+.krug-q-1 {
+background: #4b4c4d;
+}
+
+.polosa-q-1 {
+background: #4b4c4d;
+}
+
+.block-v-izbrannom {
+background: #575757;
+}
+
+.vkladki-ibrannoe-add {
+background: #575757;
+}
+
+.vkladki-ibrannoe-add:hover {
+background: #5f5f5f;
+}
+
+
+.vkladki-ibrannoe-add:after {
+border-right-color: #575757;
+}
+
+.vkladki-ibrannoe-add:hover:after {
+border-right-color: #5f5f5f;
+}
+
+.content-izbrannoe-themes-block {
+background: #575757;
+border: 4px solid #4b4c4d;
+}
+
+.vkladki-ibrannoe-add:hover .content-izbrannoe-themes-block {
+background: #5f5f5f;
+color: #ffffff;
+}
+
+.position-polosa-izb {
+background: #575757;
+}
+
+
+.bloki-reputacii-pos-abs {
+background: #575757;
+}
+
+.bloki-reputacii-pos-abs:hover {
+background: #5f5f5f;
+}
+
+.bloki-reputacii-pos-abs:hover:after {
+border-right-color: #5f5f5f;
+}
+
+.bloki-reputacii-pos-abs:after {
+border-right-color: #575757;
+}
+
+.bloki-rep-stats {
+background: #575757;
+border: 4px solid #4b4c4d;
+}
+
+.bloki-rep-stats2 {
+background: #575757;
+border: 4px solid #4b4c4d;
+}
+
+.bloki-reputacii-pos-abs:hover .bloki-rep-stats, .bloki-reputacii-pos-abs:hover .bloki-rep-stats2 {
+background: #5f5f5f;
+}
+
+.profile-reputations {
+background: #575757;
+}
+
+.block-kommentariy-otvet-rep {
+background: #4b4c4d;
+}
+
+.comm-ava .user-ava {
+border: 4px solid #4b4c4d;
+}
+
+.comm-ava .user-ava img{
+border-top-color: rgb(88,88,88);
+border-bottom-color: rgb(88,88,88);
+border-right-color: rgb(88,88,88);
+border-left-color: rgb(88,88,88);
+}
+
+.com-perekluchatel {
+background: #575757;
+}
+.swchItem span {
+background: #575757 !important;
+}
+
+.krugz-perekluchatel {
+background: #575757;
+border: 4px solid #4b4c4d;
+}
+
+.com-perekluchatel:after {
+border-right-color: #575757;
+}
+
+#cvet-reputacii-krug {
+background-color: #575757;
+}
+
+#theven{
+background: #585858;
+}
+
+
+.content-right-ls .securityCode, .content-right-ls .captcha-answer {
+background: #5D5D5D;
+}
+
+.dostijenie-no {
+background: #4b4c4d !important;
+}
+
+.pgSwchA b, .pgSwch:hover {color: #ffffff!important;}
+.pgSwch {background: #6e6e6e;color: #E8E8E8!important;}
+
+.manFlSbm:hover {
+background: #565656;
+}
+
+
+.reg-c {
+background: #494A4B;
+}
+.tabs-content-1, .tabs-content-2, .tabs-content-3 {
+background: #565656;
+}
+.block-activ-seanse-1, .block-activ-seanse-2, .block-activ-seanse-3, .krug-activ-seanse-1, .krug-activ-seanse-2, .krug-activ-seanse-3, .reg-polosa-1, .reg-polosa-2, .polosa-ograjdeniya, .polosa-ograjdeniya2{
+background: #5c5c5c;
+}
+.krug-activ-seanse-1, .krug-activ-seanse-2, .krug-activ-seanse-3 {
+border: 2px solid #4b4c4d;
+}
+.strelka-animated:after {
+border-bottom-color: #565656;
+}
+.manFlLogin, .manFlaName, .manFlaEmail, .manFlPassw, .manFlPassw1, #fCode, .manFlAvaLink, .manFlaCity, .manFlaSign, .securityCode, .captcha-answer {
+box-shadow: inset 0px 0px 0px 1px #4b4c4d;
+background: #4b4c4d;
+}
+.text-kapcha {
+color: #a9a9a9;
+}
+.reg-block-soc-sety {
+border: 2px solid #5c5c5c;
+}
+.manFlaState, .manFlaSite, .manFlaMSN, .manFlaICQ, .manFlaYahoo  {
+box-shadow: inset 0px 0px 0px 1px #4b4c4d;
+background: #4b4c4d;
+}
+
+#icon-reg-ICQ {background:url(/profile/img/icq_d_reg.png)no-repeat;}
+
+.manFlAvaFile {
+background-color: rgb(75, 76, 77);
+}
+.reg-soc-sety {background: #565656;}
+
+.wysibb-text textarea {
+color: #e8e8e8!important;
+}
+
+#dfldk3d, #jkdjdkrt3:hover a {
+background: #4b4c4d;
+}
+
+/* ----------------------------------Forum----------------------------------- */
+
+#forum-logo {
+background: url(/Static/pdalife/images/f-logo-d.png) 0 16px no-repeat transparent;
+color: #DDDCDC !important;
+}
+
+
+.forumContainer{
+	background: #4B4C4D!important;
+	color: #e8e8e8!important;
+}
+
+.popular-themes, .leaders-posts, #forumstats-v2, .news-version-themes-names, .unikalniy-vid-tem-progress-icon-1,.block-title-theme-and-opisanie, .block-avtora-themes, .them-last-post-1, .themlastpostchislo-1, .themlastpostchislo-2, .news-version-statistik-them, .block-stats-tip-cto-gde-kogda, .forum-block-ver-1, .forum-block-ver-2, .polosa-unick-themes-all-lje, .polosa-unick-themes-all    {
+background: #585858;
+}
+.delitel-polosa-inf{
+background: #6D6D6D;
+}
+.popular-themes:hover, .leaders-posts:hover, .new-messages:hover {
+background: #5f5f5f;
+}
+.forum-panel-kat {
+background: #464747;
+}
+.polosa-the-vertikal-kroshki {
+background: #5c5c5c;
+}
+.the-forum-block-3, .clear-stats, .oboznacheniya-forum, .polosa-new-drob-1, .forum-news-r-info-1, .forum-news-ico-2, .polosa-gorizont-title, .bottom-block-2-them, .bottom-block-2-otv, .user-names-next-theme-2{
+background: #616161;
+}
+.polosa-dlya-stats {
+background: #686868;
+}
+.fNavLink-new:hover {
+background: #525253;
+}
+.polosa-or-classik {
+background: #636262;
+}
+.data-time-informers-1 {
+color: #a7a7a7;
+}
+.icons-home-them, .themes-cursor-versiya-1 {
+color: #e8e8e8 !important;
+}
+.clear-stats:hover {
+color: #FFFFFF;
+}
+.fNavLink-new, .a-1-free-open a, .a-2-free-open a, .a-3-free-open a, .a-4-free-open a, .a-5-free-open a, .a-0-free-open a {
+color: #dddcdc !important;
+}
+.news-version-themes-names i , .opisanie-tem-foruma, .avtor-block-1, .last-time-post-data, .block-left-stats-icon, #forum_filter{
+color: #dddcdc;
+}
+.style-title-theme-color, .user-names-next-theme-2 i {
+color: #e8e8e8;
+}
+.the-forum-block-2 {
+border-left: 1px solid #686868;
+}
+.profile-new-mini-panel-avatar {
+border: 2px solid #5b5b5b;
+}
+.news-version-statistik-them:after {
+border-bottom-color: #585858;
+}
+.data-statistik-title-2, .url-nex-statistik-title-2 a {color: #fefefe !important;}
+#subscribe a{
+color: #DDDCDC!important;
+}
+
+
+/* ----------------------------------ИСПРАВЛЕНИЕ СЕЛЕКТ------------------------------------ */
+#selectfastnav {
+background: url(/profile/img/ugolok-sector1.png) 180px 0px no-repeat #4eb333;
+width: 200px !important;
+}
+
+.fFastNavTd select {
+width: 210px !important;
+}
+
+/* ----------------------------------Форум вид сообщений------------------------------------ */
+
+.osnova-blocka-soobsheniy-left-right, .new-vid-soobsheniy-left  {
+background: #5c5c5c;
+}
+.new-vid-soobsheniy-right {
+background: #555555;
+}
+.strelka-soobsheniya:after {
+border-right-color: #555555;
+}
+.soobsheniya-avatars {
+border: 3px solid #4b4c4d;
+}
+.group-avatars-forum {
+background: #4b4c4d;
+}
+.new-vid-rating-icon-forum {
+background: #555555;
+}
+.new-vid-block-rating-next span {
+color: #555555;
+}
+.rep-color-forum {
+color: #858A9D !important;
+}
+.forum-offline-status, .forum-online-status {
+border: 2px solid #4b4c4d;
+}
+.knopka-2-soobsheniya, .knopka-1-soobsheniya {
+background: #4b4c4d;
+}
+.podpis-soobsheniya-polzovatlya {
+border-top: 1px solid #6e6e6e;
+}
+.entryAttach {
+background: #616161;
+color: #959292 !important;
+}
+.entryAttachSize {
+background: #616161;
+}
+.entryAttachSize:after {
+border-right-color: #616161;
+}
+.attachment-soobsheniya-polzovatlya img {
+background: #616161;
+}
+.text-attachment-soobsheniya-polzovatlya {
+color: #959292;
+}
+.postQuote {
+color: #d6d5d5 !important;
+}
+.postQuote i {
+color: #959292 !important;
+}
+.probel-options-post {
+background: #4b4c4d;
+}
+.seting-options-post-deleted i {
+color: #959292;
+}
+.gTableTop {
+background: #585858 !important;
+}
+.icons-forum-post-new-glhf {
+color: #dddcdc;
+}
+.type-flag-podpis {
+color: #dddcdc;
+}
+.fool-informations-post {
+background: #4b4c4d;
+}
+.profile-user-names-post:hover {
+background: #5c5c5c;
+}
+.informations-post-ls:hover, .informations-post-skype:hover, .informations-post-www:hover, .informations-post-icq:hover {
+background: #5c5c5c;
+}
+
+.zeed-1, .zeed-2, .zeed-3, .zeed-4 {
+color: #676767 !important;
+}
+.zeed-1:hover, .zeed-2:hover, .zeed-3:hover, .zeed-4:hover {
+color: #8D8C8C !important;
+}
+.deleted-post-foruma i, .redaktirovat-post-foruma i{
+color: #fff;
+}
+
+.rep-color-forum {
+color: #e8e8e8 !important;
+}
+.infa-mini-profile-forum-2 {
+background: #414141;
+}
+
+
+
+.new-add-post-load-post {
+background: #555555 !important;
+}
+.new-add-post-load-post:hover {
+background: #434445 !important;
+}
+.displaynonefunkcional-add, .names-new-themes-xtd-4, .names-new-themes-xtd-3, #block-numetations-2, #block-numetations-1 {
+background: #555555;
+}
+.deleted-blocks-mb-1 {
+background: #4b4c4d;
+}
+.deleted-blocks-mb-2 {
+background: #4b4c4d;
+}
+#block-load-2:after, #block-load-1:after {
+border-bottom-color: #555555;
+}
+.polosa-razdela-func {
+background: #4B4C4D;
+}
+#pollBlock2 table {
+background: #5c5c5c !important;
+}
+
+.secr-code-forum-post-1 {
+background: #555555;
+}
+
+.re-desc{
+    background: #404041;
+}
+
+.RelatedEntry a:hover .re-desc{
+    background: #5d5d5d;
+}

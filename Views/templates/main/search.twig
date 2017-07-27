@@ -1,0 +1,46 @@
+{% extends 'document.twig' %}
+
+{% block title %}Поиск по сайту{% endblock %}
+
+{% block content %}
+    <div id="middle-entry" class="overflow-hidden">
+        <div class="entry-block"> 
+            <div class="content-entry">
+                <h1 class="title1"><span>Вы ищите: {{ search|title }}</span></h1>
+                <div id="middle" class="overflow-hidden">
+                    <div class="sort-count">
+                        <div class="sort-view"> 
+                            <div class="gl-block r"> 
+
+                                <div class="gl-buttons"> 
+                                    <a class="gl-mask-start grid" onclick="setDynCSS('/Static/css/grid.css')"><i class="fa fa-th"></i></a>
+                                    <a class="gl-mask-end list" onclick="setDynCSS('/Static/css/list.css')"><i class="fa fa-list"></i></a>
+
+                                </div> 
+                            </div> 
+
+                        </div>
+                    </div>
+
+                    {% include 'pdalife/.inc/list.twig' %}
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript"> 
+
+        function setDynCSS(url) { 
+            if (!arguments.length) { 
+                url = (url = document.cookie.match(/\bdyncss=([^;]*)/)) && url[1]; 
+                if (!url) return ''; 
+            } 
+            document.getElementById('dyncss').href = url; 
+            var d = new Date(); 
+            d.setFullYear(d.getFullYear() + 1); 
+            document.cookie = ['dyncss=', url, ';expires=', d.toGMTString(), ';path=/;'].join(''); 
+            return url; 
+        } 
+        setDynCSS(); 
+    </script> 
+                    
+{% endblock %}
