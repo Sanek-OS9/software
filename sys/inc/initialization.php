@@ -22,8 +22,15 @@ function printr($array)
     print_r($array);
     echo '</pre>';
 }
-
-
+# настройки системы
+function set()
+{
+    static $_instance = null;
+    if (!$_instance) {
+        $_instance = require_once H . '/sys/config/settings.php';
+    }
+    return $_instance;
+}
 /**
  * Инициализация констант необходимых для работы библиотеки SimpleHtmlDom
  * All of the Defines for the classes below.

@@ -76,7 +76,7 @@ class Rutracker extends Loadpage{
             $this->saveFile(self::DOMAIN . $image[0]->src, $filename . '.jpg');
             # сохраняем файл на сервер (если он есть)
             if ($file_data['link']) {
-                $this->saveFile(self::DOMAIN . $file_data['link'], $filename . '.torrent');
+                $path_download = $this->saveFile(self::DOMAIN . $file_data['link'], $filename . '.torrent');
             }
             # кладем готовый продукт в массив
             # также делаем запись в БД
@@ -91,6 +91,7 @@ class Rutracker extends Loadpage{
             $load->description = $file_data['description'];
             $load->platform = $this->platform;
             $load->genre = $this->genre;
+            $load->path_download = $path_download;
             if ($this->base_add) {
                 R::store($load);
             }
@@ -102,22 +103,23 @@ class Rutracker extends Loadpage{
     # потому тоже имеет смысл его сохранить
     # файлы есть не всегда на сервере у rutracker
     # поэтому если какого-то файла нету, это нормально
-    private function saveFile(string $url, string $filename)
+    private function saveFile(string $url, string $filename): string
     {
         $path_file = $this->getPathFiles() . $filename;
-        if (file_exists($path_file)) {
-            return;
+        if (file_exists(H . $path_file)) {
+            return $path_file;
         }
-        copy($url, $path_file);
+        copy($url, H . $path_file);
+        return $path_file;
     }
     private function getPathFiles(): string
     {
-        $path_dir = H . '/Static/files/' . self::DIR . '/' . $this->platform . '/';
+        $path_dir = '/Static/files/' . self::DIR . '/' . $this->platform . '/';
         if ($this->genre) {
             $path_dir .= $this->genre . '/';
         }
-        if (!is_dir($path_dir)) {
-            App::mkdir($path_dir);
+        if (!is_dir(H . $path_dir)) {
+            App::mkdir(H . $path_dir);
         }
         return $path_dir;
     }

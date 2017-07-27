@@ -11,6 +11,10 @@ class MainController extends Controller{
      */
     public function actionIndex()
     {
+        if (set()['grub_site'] == 'rutraсker') {
+            header('Location: /torrent/');
+            exit;
+        }
         $this->params['files']['ios'] = Software::getFiles('smartphone', 'ios', 6);
         $this->params['files']['android'] = Software::getFiles('smartphone', 'android', 6);
         $this->params['files']['psp'] = Software::getFiles('smartphone', 'psp', 4);
