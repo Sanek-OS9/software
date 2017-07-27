@@ -22,8 +22,10 @@ class PDAlife extends Loadpage{
         $array = $this->data->find('a[class=b-application__image-link]');
         $links = [];
         foreach ($array AS $link) {
-            $links[] = str_replace('https', 'http', $link->href);
+            //$links[] = str_replace('https', 'http', $link->href);
+            $links[] = $link->href;
         }
+        # убираем повторяющиеся файлы
         $links = array_values(array_unique($links));
         $files = [];
         $screens = [];
@@ -44,6 +46,7 @@ class PDAlife extends Loadpage{
             $file->links = $data->getLinks();
             $file->description = $data->getDescription();
             $file->video = $data->getVideo();
+            $file->screen = $data->getScreen();
             $file->screens = $data->getScreens();
             $file->rating = $data->getRating();
             $file->rating_percent = $data->getRatingPercent();
@@ -71,6 +74,7 @@ class PDAlife extends Loadpage{
     }
     private function saveScreens(array $screens)
     {
+        //$ini = new Ini(H . '/test.ini');
         for ($i = 0; $i < count($screens) ; $i++) {
             $dir_path = H . '/Static/files/' . self::DIR . '/' . $screens[$i][0]['platform'] . '/' . $screens[$i][0]['type'] . '/' . $screens[$i][0]['genre'] . '/';
             App::mkdir($dir_path);
@@ -79,6 +83,9 @@ class PDAlife extends Loadpage{
                 return;
             }
             copy($screens[$i][1], $screen_path);
+            // $ini->write(md5($screen_path), 'screen_url', $screens[$i][1]);
+            // $ini->write(md5($screen_path), 'dir_path', $dir_path);
+            // $ini->write(md5($screen_path), 'screen_name', $screens[$i][0]['name'] . '.jpg');
         }
         return;
     }

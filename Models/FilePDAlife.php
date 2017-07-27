@@ -32,7 +32,11 @@ class FilePDAlife{
     }
     private function getScreen(): string
     {
-        return '/Static/files/' . self::DIR . '/' . $this->data['platform'] . '/' . $this->data['type'] . '/' . $this->data['genre'] . '/' . $this->data['name'] . '.jpg';
+        $screen_path =  '/Static/files/' . self::DIR . '/' . $this->data['platform'] . '/' . $this->data['type'] . '/' . $this->data['genre'] . '/' . $this->data['name'] . '.jpg';
+        if (!file_exists(H . $screen_path)) {
+            return $this->data['screen'];
+        }
+        return $screen_path;
     }
     private function getLinkView()
     {

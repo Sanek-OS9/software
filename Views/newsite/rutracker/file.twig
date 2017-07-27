@@ -1,24 +1,10 @@
 
 {% extends 'base.twig' %}
 
-{% import '.inc/test.twig' as forms %}
-{% block title %}{{ title }}{% endblock %}
+{% block title %}{{ title|raw }}{% endblock %}
 
 
 {% block content %}
-    <script type="text/javascript">
-        function MyClass()
-        {
-            this.constructor = function(name)
-            {
-                this.name = name;
-            }
-
-        }
-        var test = new MyClass();
-        test.constructor('rtg');
-        console.log(test.name);
-    </script>
     <div style="float: left; width: 200px;">
         <img src="/Static/files/torrent/{{ file.platform }}/{{ file.genre }}/{{ file.name }}.jpg" align="center" alt="скачать торрент " title="скачать торрент " class="article-img-full entry-image">
      </div>

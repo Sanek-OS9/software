@@ -79,7 +79,7 @@ abstract class Text
         ];
         return preg_replace($str_search, $str_replace, $str);
     }
-    public static function youtube(string $text)
+    public static function youtube(string $text): string
     {
         return '<div class="youtube"><iframe src="https://www.youtube.com/embed/' . self::toValue($text) . '?iv_load_policy=3;rel=0;showinfo=0;modestbranding=1;autohide=1;" allowfullscreen></iframe></div>';
     }

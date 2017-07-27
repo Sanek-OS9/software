@@ -3,7 +3,6 @@ namespace Models;
 
 use \Libraries\R;
 use \Models\FilePDAlife;
-use \Core\DB;
 
 abstract class Software{
     # получаем файлы определенной платформы
@@ -23,7 +22,7 @@ abstract class Software{
         $items = R::findAll($table_name, '`runame` LIKE ? LIMIT ?', ['%' . $search . '%', $limit]);
         $files = [];
         foreach ($items as $file) {
-            $files[] = !$ajax ? new FilePDAlife($table_name, $file['path']) : $file['runame'];
+            $files[] = !$ajax ? new FilePDAlife($file['path']) : $file['runame'];
         }
         return $files;
     }

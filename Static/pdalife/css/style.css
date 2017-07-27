@@ -5,12 +5,9 @@
 @import url("/Static/pdalife/css/layout_03.css");
 @import url("/Static/pdalife/css/theme_02.css");
 @import url("/Static/pdalife/css/color_03.css");
-@import url("/Static/pdalife/css/font_07.css");
 @import url("/Static/pdalife/css/background_17.css");
 
 /*-------------------------------------------------*/
-@import url(https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&subset=latin,cyrillic-ext,cyrillic,latin-ext);
-@import url("/Static/pdalife/css/font-awesome.min.css");
 @import url("/Static/pdalife/css/promo-style.css");
 
 .u-star-rating-24 { list-style:none;margin:0px;padding:0px;width:120px;height:24px;position:relative;background: url('/Static/pdalife/images/rating_star_03.png') top left repeat-x }

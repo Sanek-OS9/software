@@ -18,6 +18,7 @@ class PDAlifeController extends Controller{
         $id = mt_rand(0, count($links));
         header('Location: ' . $links[$id]);
     }
+    # просмотр файла
     public function actionView(string $file_path)
     {
         $file = new FilePDAlife($file_path);
@@ -28,6 +29,7 @@ class PDAlifeController extends Controller{
         $this->params['file'] = $file;
         $this->display('pdalife/view');
     }
+    # просмотр файлов по тегам
     public function actionTag(string $tag, string $page = 'page1')
     {
         $pdalife = new PDAlife('https://pdalife.ru/tag/' . $tag . '/' . $page . '/');
@@ -44,7 +46,7 @@ class PDAlifeController extends Controller{
         $this->pagesDisplay($pages);
         $this->display('pdalife/tag');
     }
-
+    # просмотр списка файлов
      public function actionFiles()
      {
         # принимаем переданные параметры и убираем пустые значения
@@ -70,12 +72,31 @@ class PDAlifeController extends Controller{
         $this->pagesDisplay($pages);
         $this->display('pdalife/files');
      }
+     # поиск файлов
+     public function actionSearch(string $search)
+     {
+         $search = urldecode($search);
+         $this->params['search'] = $search;
+         $this->params['files'] = Software::getSearchFiles('smartphone', $search);
+         $this->display('main/search');
+
+     }
+     # поиск файлов для ajax
+     public function actionSearchajax(string $search)
+     {
+         $search = urldecode($search);
+         if ($files = Software::getSearchFiles('smartphone', $search, true, 15)) {
+             echo json_encode($files);
+         }
+     }
+    # подменяем вывод скриншота со стороннего сайта, делаем вывод с нашего сайта
     public function actionScreen(int $id_user, int $id_file, string $namescreen)
     {
         $image_url = 'https://pdacdn.com/userfiles/screens/' . $id_user . '/' . $id_file . '/' . $namescreen . '.jpg';
-        header('Content-Disposition: attachment; filename=' . basename($image_url));
+        header("Content-type: image/jpeg");
         readfile($image_url);
     }
+    # загрузка файла
     public function actionDownload(string $code)
     {
         # отправляем код (POST запросом)
