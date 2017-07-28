@@ -6,11 +6,11 @@
 */
 return [
     # главная страница
-    ['pattern' => '','run' => 'main/index','method' => 'GET'],
+    ['pattern' => '','run' => 'PDAlife/index','method' => 'GET'],
     # перенаправление на случайный файл
     ['pattern' => 'pdalife/random','run' => 'PDAlife/random','method' => 'GET'],
     # генерация файла sitemap.xml
-    ['pattern' => 'sitemap','run' => 'main/sitemap','method' => 'GET'],
+    ['pattern' => 'sitemap','run' => 'PDAlife/sitemap','method' => 'GET'],
     # поиск по сайту
     ['pattern' => 'search/\?q=(.+)','run' => 'smartphone/search/$1','method' => 'GET'],
     # поиск по сайту

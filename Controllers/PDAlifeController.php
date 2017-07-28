@@ -3,7 +3,7 @@ namespace Controllers;
 
 use \Core\{Controller,App};
 use \More\Pages;
-use \Models\{PDAlife,FilePDAlife};
+use \Models\{PDAlife,FilePDAlife,Software,Sitemap};
 
 class PDAlifeController extends Controller{
 
@@ -17,6 +17,32 @@ class PDAlifeController extends Controller{
         }
         $id = mt_rand(0, count($links));
         header('Location: ' . $links[$id]);
+    }
+    /*
+     * Генерируем sitemap.xml
+     */
+    public function actionSitemap()
+    {
+        $file_links = Software::getFilesViewLinks();
+
+        $sitemap = new Sitemap();
+        $sitemap->setLinks($file_links);
+        $sitemap->save('sitemap');
+
+        $_SESSION['test'] = true;
+        // $this->params['file_links'] = sizeof($file_links);
+        // $this->display('main/sitemap');
+    }
+    /*
+     * Главная страница
+     */
+    public function actionIndex()
+    {
+        $this->params['files']['ios'] = Software::getFiles('ios', 6);
+        $this->params['files']['android'] = Software::getFiles('android', 6);
+        $this->params['files']['psp'] = Software::getFiles('psp', 4);
+        $this->params['files']['windows'] = Software::getFiles('windows', 4);
+        $this->display('main/index');
     }
     # просмотр файла
     public function actionView(string $file_path)

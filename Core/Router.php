@@ -20,6 +20,10 @@ class Router
     public function run()
     {
         foreach ($this->routes AS $path) {
+            # сравниваем метод передачи данных
+            if ($_SERVER['REQUEST_METHOD'] != $path['method']) {
+                continue;
+            }
             # ищем подходящий роут подходящий согласно правилу паттерна
             if (preg_match('~^' . $path['pattern'] . '$~', $this->getURI())) {
                 # получаем внутренний путь из внешнего согласно правилу

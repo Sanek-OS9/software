@@ -19,8 +19,6 @@ class ErrorHandler
         $this->setErrors($errno, $errorstr, $file, $line);
         # выводим сообщение на экран
         $this->showMessage($this->message);
-        # не передавать ошибку в другие обработчики ошибок
-        return true;
     }
     public function exceptionErrorHandler($e)
     {
@@ -28,8 +26,6 @@ class ErrorHandler
         $this->setErrors(get_class($e), $e->getMessage(), $e->getFile(), $e->getLine());
         # выводим сообщение на экран
         $this->showMessage($this->message);
-        # не передавать ошибку в другие обработчики ошибок
-        return true;
     }
     protected function setErrors($errno, $errorstr, $file, $line)
     {

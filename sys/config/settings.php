@@ -1,6 +1,6 @@
 <?php
 # настройки системы
 return [
-    'debug' => false,
+    'debug' => true,
     'grub_site' => 'rutraсker'
 ];

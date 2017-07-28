@@ -27,8 +27,8 @@ class PDAlife extends Loadpage{
         }
         # убираем повторяющиеся файлы
         $links = array_values(array_unique($links));
-        $files = [];
-        $screens = [];
+        $files = []; // сюда складываем данные о приложениях
+        $screens = []; // сюда складываем скршоты для подальшего сохранения
         for ($i = 0; $i < count($links); $i++) {
             $filename = basename($links[$i]);
             $file = R::findOne(self::DIR, '`path` = ?', [$filename]);
@@ -61,6 +61,7 @@ class PDAlife extends Loadpage{
         $this->saveScreens($screens);
         return $files;
     }
+    # сохраняем скриншот
     private function saveScreen(array $file, string $screen)
     {
         $dir_path = H . '/Static/files/' . self::DIR . '/' . $file['platform'] . '/' . $file['type'] . '/' . $file['genre'] . '/';
@@ -72,9 +73,9 @@ class PDAlife extends Loadpage{
         copy($screen, $screen_path);
         return;
     }
+    # сохраняем скриншоты кучей
     private function saveScreens(array $screens)
     {
-        //$ini = new Ini(H . '/test.ini');
         for ($i = 0; $i < count($screens) ; $i++) {
             $dir_path = H . '/Static/files/' . self::DIR . '/' . $screens[$i][0]['platform'] . '/' . $screens[$i][0]['type'] . '/' . $screens[$i][0]['genre'] . '/';
             App::mkdir($dir_path);
@@ -83,9 +84,6 @@ class PDAlife extends Loadpage{
                 return;
             }
             copy($screens[$i][1], $screen_path);
-            // $ini->write(md5($screen_path), 'screen_url', $screens[$i][1]);
-            // $ini->write(md5($screen_path), 'dir_path', $dir_path);
-            // $ini->write(md5($screen_path), 'screen_name', $screens[$i][0]['name'] . '.jpg');
         }
         return;
     }
@@ -117,28 +115,35 @@ class PDAlife extends Loadpage{
     # для дальнейшей русификации
     private function setInfo(string $section, string $key, string $value)
     {
+        static $ini;
         $dir_path = H . '/sys/ini/' . self::DIR . '/';
         App::mkdir($dir_path);
-        $ini = new Ini($dir_path . 'navigation.ini');
+        if (!$ini) {
+            $ini = new Ini($dir_path . 'navigation.ini');
+        }
         $name = $ini->read($section, $key);
         # если ранее не добавляли
         if (!$name) {
             $ini->write($section, $key, $value);
         }
     }
+    # рейтинг файла по пяти бальной шкале
     public function getRating(): float
     {
         return $this->getRatingPercent() * 0.05;
     }
+    # рейтинг файла в процентах
     public function getRatingPercent(): int
     {
         return $this->data->find('meta[itemprop=ratingValue]')[0]->content ?? 0;
     }
+    # основной скриншот файла
     public function getScreen(): string
     {
         $screen_url = $this->data->find('.b-application__image-link img')[0]->src;
         return $screen_url ?? '';
     }
+    # дополнительные скриншоты
     public function getScreens(): string
     {
         $screens = [];
@@ -148,6 +153,7 @@ class PDAlife extends Loadpage{
         }
         return serialize($screens);
     }
+    # количество страниц
     public function getPages(): int
     {
         $links = [];
@@ -155,20 +161,25 @@ class PDAlife extends Loadpage{
         foreach ($data AS $link) {
             $links[] = $link->plaintext;
         }
+        # берем послдний элемент
         $page = array_pop($links);
+        # если последний элемент не число сдвигаем еще на один уровень
         if ($page == 'Следующая') {
             $page = array_pop($links);
         }
         return $page ?? 0;
     }
+    # видео обзор файла
     public function getVideo(): string
     {
         return $this->data->find('a[class=play-icon]')[0]->href ?? '';
     }
+    # описание файла
     public function getDescription(): string
     {
         return $this->data->find('.b-user-content')[0]->innertext ?? '';
     }
+    # ссылки на скачивание
     public function getLinks(): string
     {
         $links = [];
@@ -185,25 +196,24 @@ class PDAlife extends Loadpage{
         }
         return serialize($links);
     }
+    # заголовок страницы
     public function getTitle(): string
     {
         return $this->data->find('h1[class=b-header__label]')[0]->plaintext ?? '2';
     }
+    # заголовок страницы на латыни и без спец.символов
     public function getName()
     {
         return Text::for_filename($this->getTitle());
     }
+    # для версии какой платформы подходит приложение
     public function getVersion(): string
     {
         return html_entity_decode($this->data->find('span[class=b-application__info-value_type_os]')[0]->plaintext) ?? '';
     }
+    # количество просмотров
     public function getViews(): string
     {
         return $this->data->find('span[class=b-application__info-value]')[0]->plaintext ?? '';
-    }
-
-    public function __destruct()
-    {
-        parent::__destruct();
     }
 }
