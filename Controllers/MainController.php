@@ -11,14 +11,10 @@ class MainController extends Controller{
      */
     public function actionIndex()
     {
-        if (set()['grub_site'] == 'rutraсker') {
-            header('Location: /torrent/');
-            exit;
-        }
-        $this->params['files']['ios'] = Software::getFiles('smartphone', 'ios', 6);
-        $this->params['files']['android'] = Software::getFiles('smartphone', 'android', 6);
-        $this->params['files']['psp'] = Software::getFiles('smartphone', 'psp', 4);
-        $this->params['files']['windows'] = Software::getFiles('smartphone', 'windows', 4);
+        $this->params['files']['ios'] = Software::getFiles('ios', 6);
+        $this->params['files']['android'] = Software::getFiles('android', 6);
+        $this->params['files']['psp'] = Software::getFiles('psp', 4);
+        $this->params['files']['windows'] = Software::getFiles('windows', 4);
         $this->display('main/index');
     }
     /*
@@ -30,10 +26,10 @@ class MainController extends Controller{
 
         $sitemap = new Sitemap();
         $sitemap->setLinks($file_links);
-        $sitemap->save();
+        $sitemap->save('sitemap');
 
         $_SESSION['test'] = true;
-        $this->params['file_links'] = sizeof($file_links);
-        $this->display('main/sitemap');
+        // $this->params['file_links'] = sizeof($file_links);
+        // $this->display('main/sitemap');
     }
 }

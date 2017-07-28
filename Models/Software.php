@@ -6,9 +6,9 @@ use \Models\FilePDAlife;
 
 abstract class Software{
     # получаем файлы определенной платформы
-    static function getFiles(string $table_name, string $platform, $limit = 15): array
+    static function getFiles(string $platform, $limit = 15): array
     {
-        $items = R::findAll($table_name, '`platform` = ? LIMIT ?', [$platform, $limit]);
+        $items = R::findAll('smartphone', '`platform` = ? LIMIT ?', [$platform, $limit]);
         $files = [];
         foreach ($items AS $file) {
             $files[] = new FilePDAlife($file['path']);
@@ -17,9 +17,9 @@ abstract class Software{
     }
     # получаем файлы по запросу поиска
     # для запроса ajax отдаем только названия файлов
-    static function getSearchFiles(string $table_name, string $search, $ajax = false, $limit = 200): array
+    static function getSearchFiles(string $search, $ajax = false, $limit = 200): array
     {
-        $items = R::findAll($table_name, '`runame` LIKE ? LIMIT ?', ['%' . $search . '%', $limit]);
+        $items = R::findAll('smartphone', '`runame` LIKE ? LIMIT ?', ['%' . $search . '%', $limit]);
         $files = [];
         foreach ($items as $file) {
             $files[] = !$ajax ? new FilePDAlife($file['path']) : $file['runame'];

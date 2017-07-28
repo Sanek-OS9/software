@@ -7,7 +7,7 @@ use \Models\Software;
 
 class Controller{
     protected $params = [];
-    protected $template_dir = 'templates';
+    protected $template_dir = 'software';
 
     public function __construct()
     {

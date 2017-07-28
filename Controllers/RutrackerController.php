@@ -2,7 +2,7 @@
 namespace Controllers;
 
 use \Core\{Controller,App};
-use \Models\{Software,Rutracker};
+use \Models\{Software,Rutracker,Sitemap};
 use \More\Pages;
 use \Libraries\R;
 
@@ -13,8 +13,28 @@ plaintext - Читает или записывает простой текст �
 */
 
 class RutrackerController extends Controller{
-    protected $template_dir = 'newsite';
+    protected $template_dir = 'torrent';
 
+    public function actionRandom()
+    {
+        $files = R::findAll('torrent', 'ORDER BY `id` ASC LIMIT 200');
+        foreach ($files as $file) {
+            echo 'http://' . $_SERVER['HTTP_HOST'] . '/torrent/' . $file['name'] . '.htm<br />';
+        }
+    }
+    public function actionSitemap()
+    {
+        $file_links = [];
+        $files = R::findAll('torrent');
+        foreach ($files as $file) {
+            $file_links[] = '/torrent/' . $file['name'] . '.htm';
+        }
+        $sitemap = new Sitemap();
+        $sitemap->setLinks($file_links);
+        $sitemap->save('torrent');
+
+        $_SESSION['test'] = true;
+    }
     # просмотр файла, файл берется непосредственно с нашей базы данных
     public function actionFile(string $filename)
     {
@@ -46,25 +66,29 @@ class RutrackerController extends Controller{
     }
     public function actionIndex()
     {
-        $rutracker = new Rutracker('/load/');
-        $rutracker->base_add = false;
-        $this->params['files'] = $rutracker->getAllFiles();
-        $this->params['navigation'] = $rutracker->getNavigation();
+        $files = R::findAll('torrent', 'LIMIT 16');
+
+        // $rutracker = new Rutracker('/load/');
+        // $rutracker->base_add = false;
+        $this->params['navigation'] = Rutracker::getNavigation();
+        $this->params['files'] = $files;
+
         $this->params['title'] = 'Скачайте файлы с торрента бесплатно';
-        $this->display('rutracker/index');
+        $this->display('rutracker/category');
     }
     # парсер просмотра файлов в каталоге с сайта rutracker.co.ua
     # после парсинга они все запишутся на наш сервер и братся уже будут с него
-    public function actionCategory(string $platform, int $number, int $sort, string $page, string $genre = '')
+    public function actionCategory()
     {
-        $rutracker = new Rutracker('/load/' . $platform . '/' . $genre . '/' . $number . '-' . Pages::getThisPage() . '-' . $sort);
+        # принимаем переданные параметры и убираем пустые значения
+        list($platform, $number, $sort, $page, $genre) = func_get_args();
 
+        $rutracker = new Rutracker('/load/' . $platform . '/' . $genre . '/' . $number . '-' . Pages::getThisPage() . '-' . $sort);
         $rutracker->platform = $platform;
         $rutracker->number = $number;
         $rutracker->sort = $sort;
         $rutracker->page = $page;
         $rutracker->genre = $genre;
-
         $this->params['files'] = $rutracker->getAllFiles();
         $this->params['sorting'] = $rutracker->getSorting();
         $this->params['sort'] = $sort;
@@ -73,9 +97,7 @@ class RutrackerController extends Controller{
         if (!$this->params['navigation']) {
             $rutracker->setNavigation();
         }
-
         $this->pagesDisplay($rutracker->countPages()); // показ.пагинации
-
         $this->display('rutracker/category');
     }
 }

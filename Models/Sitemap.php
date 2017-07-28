@@ -27,9 +27,9 @@ class Sitemap{
             $priority->appendChild($this->xml->createTextNode('0.7'));
         }
     }
-    public function save()
+    public function save(string $filename)
     {
-        $sitemap_path = H . '/Static/sitemap.xml';
+        $sitemap_path = H . '/Static/' . $filename . '.xml';
         $this->xml->formatOutput = true;
         $this->xml->save($sitemap_path);
         chmod($sitemap_path, 0777);

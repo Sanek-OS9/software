@@ -91,7 +91,7 @@ class Rutracker extends Loadpage{
             $load->description = $file_data['description'];
             $load->platform = $this->platform;
             $load->genre = $this->genre;
-            $load->path_download = $path_download;
+            $load->path_download = $path_download ?? '';
             if ($this->base_add) {
                 R::store($load);
             }

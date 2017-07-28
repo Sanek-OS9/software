@@ -51,13 +51,13 @@ class PDAlifeController extends Controller{
      {
         # принимаем переданные параметры и убираем пустые значения
         $segments = App::clear_array(func_get_args());
-        #list($platform, $genre, $sort_str, $sort, $page) = func_get_args();
+        list($platform, $genre, $sort_str, $sort, $page) = func_get_args();
         # формируем ссылку которую будем парсить
         $link = '/' . implode('/', $segments) . '/';
 
         if (isset($_SESSION['test'])) {
-            $second = mt_rand(1, 8);
-            //header('Refresh: ' . $second . '; /smartphone/' . $platform . '/page' . (Pages::getThisPage() + 1) . '/');
+            $second = mt_rand(5, 15);
+            header('Refresh: ' . $second . '; /smartphone/' . $platform . '/page' . (Pages::getThisPage() + 1) . '/');
         }
         $pdalife = new PDAlife('http://pdalife.ru' . $link);
 
@@ -77,7 +77,7 @@ class PDAlifeController extends Controller{
      {
          $search = urldecode($search);
          $this->params['search'] = $search;
-         $this->params['files'] = Software::getSearchFiles('smartphone', $search);
+         $this->params['files'] = Software::getSearchFiles($search);
          $this->display('main/search');
 
      }
@@ -85,7 +85,7 @@ class PDAlifeController extends Controller{
      public function actionSearchajax(string $search)
      {
          $search = urldecode($search);
-         if ($files = Software::getSearchFiles('smartphone', $search, true, 15)) {
+         if ($files = Software::getSearchFiles($search, true, 15)) {
              echo json_encode($files);
          }
      }
