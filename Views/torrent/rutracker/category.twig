@@ -13,6 +13,21 @@
 <hr>
 {% endblock %}
 
+{% block breadcrumbs %}
+    <div class="location-bg">
+        <div class="location-content">
+            <div id="speedbar" style="line-height: 42px;">
+                {% for link, item in breadcrumbs %}
+                    <a href="{{link}}">{{item}}</a>
+                {% endfor %}
+            </div>
+
+            <div class="location-links"></div>
+        </div>
+    </div>
+
+{% endblock %}
+
 {% block content %}
 <div class="articles">
     <div class="articles-film-cuted">

@@ -21,6 +21,20 @@ class Rutracker extends Loadpage{
     {
         parent::__construct(self::DOMAIN . $url);
     }
+    # "хлебные крошки"
+    public function getBreadCrumbs()
+    {
+        $links = [];
+        $breadcrumbs = $this->data->find('div#speedbar a');
+        foreach ($breadcrumbs as $value) {
+            if ($value->innertext == 'Главная') {
+                continue;
+            }
+            $value->href = str_replace('load', 'torrent', $value->href) . '/page1/';
+            $links[$value->href] = $value->innertext;
+        }
+        return $links;
+    }
     # заголовок страницы
     public function getTitle(): string
     {
@@ -112,6 +126,7 @@ class Rutracker extends Loadpage{
         copy($url, H . $path_file);
         return $path_file;
     }
+    # путь по кторому будет сохранен файл и доступен для скачивания
     private function getPathFiles(): string
     {
         $path_dir = '/Static/files/' . self::DIR . '/' . $this->platform . '/';
@@ -123,6 +138,7 @@ class Rutracker extends Loadpage{
         }
         return $path_dir;
     }
+    # описание файла
     public function getDescription(): string
     {
         /*
@@ -165,6 +181,7 @@ class Rutracker extends Loadpage{
         }
         return implode('<br />', $description);
     }
+    # прямая ссылка на скачивание файла
     public function getLinkDownload(): string
     {
         $link = $this->data->find('#divDLStart a');
@@ -267,10 +284,5 @@ class Rutracker extends Loadpage{
             $pages++;
         }
         return $pages;
-    }
-    # подчищаем за собой
-    public function __destruct()
-    {
-        parent::__destruct();
     }
 }

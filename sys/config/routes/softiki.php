@@ -22,8 +22,8 @@ return [
     ],
     # файлы с сайта rutracker.co.ua (категория)
     [
-        'pattern' => 'torrent/([a-z0-9|_]+)/?([a-z0-9|_]+)?/([0-9]+)/?(2|4|6|10|12)?/(page[0-9]+)',
-        'run' => 'rutracker/category/$1/$3/$4/$5/$2',
+        'pattern' => 'torrent/([a-z0-9|_]+)/?([a-z|_]+)?/([0-9]+)/?(2|4|6|10|12)?/(page[0-9]+)',
+        'run' => 'rutracker/category/$1/$2/$3/$4/$5',
         'method' => 'GET'
     ],
 ];

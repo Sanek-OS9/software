@@ -9,6 +9,6 @@ switch ($_SERVER['HTTP_HOST']) {
         return require_once 'routes/softiki.php';
         break;
     default:
-        return require_once 'routes/ska4ayka.php';;
+        return require_once 'routes/softiki.php';;
         break;
 }
