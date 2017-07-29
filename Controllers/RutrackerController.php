@@ -2,7 +2,7 @@
 namespace Controllers;
 
 use \Core\{Controller,App};
-use \Models\torrent\Parsing;
+use \Models\Modules\torrent\{Parsing,Software};
 use \Models\Sitemap;
 use \More\Pages;
 use \Libraries\R;
@@ -29,21 +29,16 @@ class RutrackerController extends Controller{
     }
     public function actionSitemap()
     {
-        $file_links = [];
-        $files = R::findAll('torrent');
-        foreach ($files as $file) {
-            $file_links[] = '/torrent/' . $file['name'] . '.htm';
-        }
-        $sitemap = new Sitemap();
-        $sitemap->setLinks($file_links);
-        $sitemap->save('torrent');
+        $links = Software::getFilesViewLinks();
 
-        $_SESSION['test'] = true;
+        $sitemap = new Sitemap();
+        $sitemap->setLinks($links);
+        $sitemap->save('torrent');
     }
     # просмотр файла, файл берется непосредственно с нашей базы данных
     public function actionFile(string $filename)
     {
-        // $_SESSION['test'] = true;
+        //$_SESSION['test'] = true;
         if (isset($_SESSION['test'])) {
             $second = mt_rand(5, 15);
             $newfile = R::findOne('torrent', 'ORDER BY rand()');

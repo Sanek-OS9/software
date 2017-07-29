@@ -3,7 +3,6 @@ namespace Core;
 
 use \More\{Text,Pages};
 use \Core\{Twig,App};
-use \Models\smartphone\Software;
 
 class Controller{
     protected $params = [];
@@ -17,7 +16,6 @@ class Controller{
         if (!defined('SOFTWARE_ACCESS')) {
             App::access_denied('ACCESS DENIED');
         }
-        $this->_inicializationParams();
     }
 
     protected function access_denied(string $msg)
@@ -25,12 +23,6 @@ class Controller{
         $this->params['message'] = $msg;
         $this->display('access_denied');
         exit;
-    }
-    private function _inicializationParams()
-    {
-        # статистика количества файлов
-        $this->params['statistic'] = Software::getCountPlatform();
-
     }
     protected function display(string $filename)
     {

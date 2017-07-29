@@ -1,15 +1,15 @@
 <?php
-namespace Models\smartphone;
+namespace Models\Modules\smartphone;
 
 use \Libraries\R;
 use \More\Ini;
+use \Models\Modules\smartphone\Software;
 
 class File{
     private $table_name;
     private $file_path;
     private $data;
     private $info;
-    const DIR = 'smartphone';
 
     public function __construct(string $file_path)
     {
@@ -19,20 +19,16 @@ class File{
     }
     private function getInfo(): array
     {
-        $ini = new Ini(H . '/sys/ini/' . self::DIR . '/navigation.ini');
+        $ini = new Ini(H . '/sys/ini/' . Software::$table_name . '/navigation.ini');
         return $ini->readAll();
     }
     private function getData()
     {
-        $file = R::findOne(self::DIR, '`path` = ?', [$this->file_path]);
-        if (isset($file->id)) {
-            return $file->export();
-        }
-        return [];
+        return Software::getFile($this->file_path);
     }
     private function getScreen(): string
     {
-        $screen_path =  '/Static/files/' . self::DIR . '/' . $this->data['platform'] . '/' . $this->data['type'] . '/' . $this->data['genre'] . '/' . $this->data['name'] . '.jpg';
+        $screen_path =  '/Static/files/' . Software::$table_name . '/' . $this->data['platform'] . '/' . $this->data['type'] . '/' . $this->data['genre'] . '/' . $this->data['name'] . '.jpg';
         if (!file_exists(H . $screen_path)) {
             return $this->data['screen'];
         }
@@ -40,7 +36,7 @@ class File{
     }
     private function getLinkView()
     {
-        return '/' . self::DIR . '/' . $this->data['path'];
+        return '/' . Software::$table_name . '/' . $this->data['path'];
     }
     public function __get($name)
     {

@@ -24,17 +24,7 @@ class pages
      */
     function __construct($items_count = 0)
     {
-        $this->items_per_page = 16;
         $this->posts = $items_count;
-    }
-
-    /**
-     * Рассчет текущей страницы
-     * @deprecated Рассчет производится автоматически. Больше этот метод вызывать вручную нет необходимости
-     */
-    function this_page()
-    {
-
     }
 
     /**
@@ -71,65 +61,27 @@ class pages
 
     /**
      * Для подстановки в MYSQL LIMIT
-     * @return string
      */
-    function limit()
+    function limit(): string
     {
         return $this->my_start() . ', ' . $this->_items_per_page;
     }
 
     /**
      * старт извлечения из базы
-     * @return int
      */
-    function my_start()
+    function my_start(): string
     {
         return $this->_items_per_page * ($this->this_page - 1);
     }
 
     /**
      * конец
-     * @return int
      */
-    function end()
+    function end(): int
     {
         return $this->_items_per_page * $this->this_page;
     }
-
-    /**
-     * пересчет кол-ва страниц
-     * @deprecated
-     */
-    function count()
-    {
-
-    }
-
-    /**
-     * Вывод списка страниц
-     * @param string $link ссылка, к которой будет добавлено page={num}
-     */
-    function display($link)
-    {
-        if ($this->pages > 1) {
-            $list = new design();
-            $list->assign('link', $link);
-            $list->assign('k_page', $this->pages);
-            $list->assign('page', $this->this_page);
-            $list->display('design.pages.tpl');
-        }
-    }
-
-    /**
-     * Вывод списка страниц
-     * @param string $link ссылка, к которой будет добавлено page={num}
-     * @deprecated
-     */
-    function listing($link)
-    {
-        $this->display($link);
-    }
-
     function __set($name, $value)
     {
         switch ($name) {

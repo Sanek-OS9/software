@@ -1,0 +1,55 @@
+Ошибка: №TypeError (2017-07-29 02:32:41)
+Описание: Return value of Models\FilePDAlife::getScreen() must be of the type string, null returned
+Файл: /var/www/jeybe110/data/www/ska4ay/Models/FilePDAlife.php
+Строка: 37
+---------
+Ошибка: №TypeError (2017-07-29 06:02:10)
+Описание: Return value of Models\FilePDAlife::getScreen() must be of the type string, null returned
+Файл: /var/www/jeybe110/data/www/ska4ay/Models/FilePDAlife.php
+Строка: 37
+---------
+Ошибка: №8 (2017-07-29 16:08:09)
+Описание: Trying to get property of non-object
+Файл: /var/www/jeybe110/data/www/ska4ay/Controllers/PDAlifeController.php
+Строка: 18
+---------
+Ошибка: №TypeError (2017-07-29 16:08:09)
+Описание: Argument 1 passed to Models\FilePDAlife::__construct() must be of the type string, null given, called in /var/www/jeybe110/data/www/ska4ay/Controllers/PDAlifeController.php on line 18
+Файл: /var/www/jeybe110/data/www/ska4ay/Models/FilePDAlife.php
+Строка: 14
+---------
+Ошибка: №8 (2017-07-29 16:14:20)
+Описание: Undefined index: type
+Файл: /var/www/jeybe110/data/www/ska4ay/Models/FilePDAlife.php
+Строка: 49
+---------
+Ошибка: №8 (2017-07-29 16:14:20)
+Описание: Undefined index: genre
+Файл: /var/www/jeybe110/data/www/ska4ay/Models/FilePDAlife.php
+Строка: 48
+---------
+Ошибка: №TypeError (2017-07-29 16:17:40)
+Описание: Return value of Models\FilePDAlife::getScreen() must be of the type string, null returned
+Файл: /var/www/jeybe110/data/www/ska4ay/Models/FilePDAlife.php
+Строка: 37
+---------
+Ошибка: №TypeError (2017-07-29 17:23:37)
+Описание: Return value of Models\FilePDAlife::getScreen() must be of the type string, null returned
+Файл: /var/www/jeybe110/data/www/ska4ay/Models/FilePDAlife.php
+Строка: 37
+---------
+Ошибка: №TypeError (2017-07-29 17:40:36)
+Описание: Return value of Models\FilePDAlife::getScreen() must be of the type string, null returned
+Файл: /var/www/jeybe110/data/www/ska4ay/Models/FilePDAlife.php
+Строка: 37
+---------
+Ошибка: №Error (2017-07-29 22:44:57)
+Описание: Call to a member function clear() on boolean
+Файл: /var/www/jeybe110/data/www/ska4ay/Core/Loadpage.php
+Строка: 49
+---------
+Ошибка: №ParseError (2017-07-30 00:36:45)
+Описание: syntax error, unexpected '/'
+Файл: /var/www/jeybe110/data/www/ska4ay/Controllers/RutrackerController.php
+Строка: 41
+---------

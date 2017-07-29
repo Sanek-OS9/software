@@ -2,12 +2,12 @@
 /*
 
 */
-namespace Models\smartphone;
+namespace Models\Modules\smartphone;
 
 use \More\{Text,Ini};
 use \Core\{App,Loadpage};
 use \Libraries\R;
-use \Models\smartphone\File;
+use \Models\Modules\smartphone\File;
 
 class Parsing extends Loadpage{
 

@@ -1,17 +1,25 @@
 <?php
-namespace Models\smartphone;
+namespace Models\Traits;
 
 use \Libraries\R;
-use \Models\smartphone\File;
 
-abstract class Software{
+/**
+ * Трэйт для работы со спарсенными файлами
+ */
+trait Files
+{
+    # получаем данные файла по его имени или пути
+    static function getFile(string $name)
+    {
+        return R::findOne(self::$table_name, '`path` = :name OR `name` = :name', [':name' => $name]);
+    }
     # получаем файлы определенной платформы
     static function getFiles(string $platform, $limit = 15): array
     {
-        $items = R::findAll('smartphone', '`platform` = ? LIMIT ?', [$platform, $limit]);
+        $items = R::findAll(self::$table_name, '`platform` = ? LIMIT ?', [$platform, $limit]);
         $files = [];
         foreach ($items AS $file) {
-            $files[] = new File($file['path']);
+            $files[] = new self::$class_import($file['path']);
         }
         return $files;
     }
@@ -19,10 +27,10 @@ abstract class Software{
     # для запроса ajax отдаем только названия файлов
     static function getSearchFiles(string $search, $ajax = false, $limit = 200): array
     {
-        $items = R::findAll('smartphone', '`runame` LIKE ? LIMIT ?', ['%' . $search . '%', $limit]);
+        $items = R::findAll(self::$table_name, '`runame` LIKE ? LIMIT ?', ['%' . $search . '%', $limit]);
         $files = [];
         foreach ($items as $file) {
-            $files[] = !$ajax ? new File($file['path']) : $file['runame'];
+            $files[] = !$ajax ? new self::$class_import($file['path']) : $file['runame'];
         }
         return $files;
     }
@@ -31,7 +39,7 @@ abstract class Software{
     {
         $array = [];
         $array['all']['files'] = 0;
-        $counts = R::getAll("SELECT COUNT(`platform`) AS 'count', `platform` FROM `smartphone` GROUP BY `platform` ORDER BY `count` DESC");
+        $counts = R::getAll("SELECT COUNT(`platform`) AS 'count', `platform` FROM `" . self::$table_name . "` GROUP BY `platform` ORDER BY `count` DESC");
         foreach ($counts AS $file) {
             # записываем данные для платформы
             $array['platform'][$file['platform']] = [
@@ -42,15 +50,5 @@ abstract class Software{
         }
         return $array;
     }
-    # получить ссылки на просмотр файлов
-    static function getFilesViewLinks(): array
-    {
-        $links = [];
-        $files = R::findAll('smartphone');
-        foreach ($files AS $item) {
-            $file = new File($item->path);
-            $links[] = $file->link_view;
-        }
-        return $links;
-    }
+
 }

@@ -4,31 +4,33 @@ namespace Controllers;
 use \Core\{Controller,App};
 use \Libraries\R;
 use \More\Pages;
-use \Models\smartphone\{Parsing,File,Software};
+use \Models\Modules\smartphone\{Parsing,File,Software};
 use \Models\Sitemap;
 
 class PDAlifeController extends Controller{
-    /*
-     * Генерируем sitemap.xml
-     */
+
+    public function __construct()
+    {
+        parent::__construct();
+        # статистика количества файлов
+        $this->params['statistic'] = Software::getCountPlatform();
+    }
+    # Генерируем /Static/sitemap.xml
     public function actionSitemap()
     {
-        // $file_links = Software::getFilesViewLinks();
-        $links = [];
-        $files = R::findAll('smartphone');
-        foreach ($files AS $item) {
-            $links[] = '/smartphone/' . $item['path'];
-        }
+        # массив со списком ссылок на просмотр файлов
+        $links = Software::getFilesViewLinks();
+
         $sitemap = new Sitemap();
         $sitemap->setLinks($links);
         $sitemap->save('sitemap');
 
+        # количество файлов
         $this->params['file_links'] = sizeof($links);
+
         $this->display('main/sitemap');
     }
-    /*
-     * Главная страница
-     */
+    # Главная страница
     public function actionIndex()
     {
         $this->params['files']['ios'] = Software::getFiles('ios', 6);
@@ -65,7 +67,7 @@ class PDAlifeController extends Controller{
         $this->pagesDisplay($pages);
         $this->display('pdalife/tag');
     }
-    # просмотр списка файлов
+    # просмотр списка файлов в категории
      public function actionFiles()
      {
         # принимаем переданные параметры и убираем пустые значения
@@ -100,7 +102,7 @@ class PDAlifeController extends Controller{
          $this->display('main/search');
 
      }
-     # поиск файлов для ajax
+     # поиск файлов для ajax запроса
      public function actionSearchajax(string $search)
      {
          $search = urldecode($search);
@@ -115,7 +117,7 @@ class PDAlifeController extends Controller{
         header("Content-type: image/jpeg");
         readfile($image_url);
     }
-    # загрузка файла
+    # скачивание файла
     public function actionDownload(string $code)
     {
         # отправляем код (POST запросом)
@@ -134,15 +136,15 @@ class PDAlifeController extends Controller{
         readfile($link);
     }
 
-        public function actionRandom()
-        {
-            $files = R::findAll('smartphone', 'LIMIT 200');
-            $links = [];
-            foreach ($files as $v) {
-                $file = new File('smartphone', $v['path']);
-                $links[] = 'http://скачай-ка.рф' . $file->link_view;
-            }
-            $id = mt_rand(0, count($links));
-            header('Location: ' . $links[$id]);
+    public function actionRandom()
+    {
+        $files = R::findAll('smartphone', 'LIMIT 200');
+        $links = [];
+        foreach ($files as $v) {
+            $file = new File('smartphone', $v['path']);
+            $links[] = 'http://скачай-ка.рф' . $file->link_view;
         }
+        $id = mt_rand(0, count($links));
+        header('Location: ' . $links[$id]);
+    }
 }

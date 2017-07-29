@@ -46,5 +46,8 @@ abstract class App{
             }
         }
     }
-
+    static function getRoutes(string $site): array
+    {
+        return require_once H . '/sys/sites/' . $site . '/routes.php';
+    }
 }

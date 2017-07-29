@@ -1,5 +1,5 @@
 <?php
-namespace Models\torrent;
+namespace Models\Modules\torrent;
 
 use \More\{Pages,Text,Ini};
 use \Core\{App,Loadpage};
