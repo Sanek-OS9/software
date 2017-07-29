@@ -12,9 +12,9 @@ return [
     # генерация файла sitemap.xml
     ['pattern' => 'sitemap','run' => 'PDAlife/sitemap','method' => 'GET'],
     # поиск по сайту
-    ['pattern' => 'search/\?q=(.+)','run' => 'smartphone/search/$1','method' => 'GET'],
+    ['pattern' => 'search/\?q=(.+)','run' => 'PDAlife/search/$1','method' => 'GET'],
     # поиск по сайту
-    ['pattern' => 'search/\?term=(.+)','run' => 'smartphone/searchajax/$1','method' => 'GET'],
+    ['pattern' => 'search/\?term=(.+)','run' => 'PDAlife/searchajax/$1','method' => 'GET'],
     # просмотр файлов с PDAlife по тегу
     ['pattern' => 'tag/([a-z0-9|\-|\+|\!]+)','run' => 'PDAlife/tag/$1','method' => 'GET'],
     # просмотр файлов с PDAlife по тегу

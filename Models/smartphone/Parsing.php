@@ -2,13 +2,15 @@
 /*
 
 */
-namespace Models;
+namespace Models\smartphone;
 
 use \More\{Text,Ini};
 use \Core\{App,Loadpage};
 use \Libraries\R;
+use \Models\smartphone\File;
 
-class PDAlife extends Loadpage{
+class Parsing extends Loadpage{
+
     public $url;
     const DIR = 'smartphone';
 
@@ -22,7 +24,6 @@ class PDAlife extends Loadpage{
         $array = $this->data->find('a[class=b-application__image-link]');
         $links = [];
         foreach ($array AS $link) {
-            //$links[] = str_replace('https', 'http', $link->href);
             $links[] = $link->href;
         }
         # убираем повторяющиеся файлы
@@ -33,10 +34,10 @@ class PDAlife extends Loadpage{
             $filename = basename($links[$i]);
             $file = R::findOne(self::DIR, '`path` = ?', [$filename]);
             if (isset($file->id)) {
-                $files[$i] = new FilePDAlife($file->path);
+                $files[$i] = new File($file->path);
                 continue;
             }
-            $data = new PDAlife($links[$i]);
+            $data = new Parsing($links[$i]);
             $file = R::dispense(self::DIR);
             $file->path = $filename;
             $file->runame = $data->getTitle();
@@ -76,16 +77,9 @@ class PDAlife extends Loadpage{
     # сохраняем скриншоты кучей
     private function saveScreens(array $screens)
     {
-        for ($i = 0; $i < count($screens) ; $i++) {
-            $dir_path = H . '/Static/files/' . self::DIR . '/' . $screens[$i][0]['platform'] . '/' . $screens[$i][0]['type'] . '/' . $screens[$i][0]['genre'] . '/';
-            App::mkdir($dir_path);
-            $screen_path = $dir_path . $screens[$i][0]['name'] . '.jpg';
-            if (file_exists($screen_path)) {
-                return;
-            }
-            copy($screens[$i][1], $screen_path);
+        for ($i = 0; $i < count($screens); $i++) {
+            $this->saveScreen($screens[$i][0], $screens[$i][1]);
         }
-        return;
     }
     private function getIcon(string $platform): string
     {

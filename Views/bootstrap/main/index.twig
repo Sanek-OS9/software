@@ -1,0 +1,27 @@
+{% extends 'document.twig' %}
+
+{% block contnet %}
+<div class="row"><div class="h-title-heading">
+    <div class="h-title2"><h3>IOS</h3></div>
+</div>
+</div>
+<div class="row">
+    {% for file in files.ios %}
+        <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3 th-preview" itemscope itemtype="http://schema.org/ApplyAction">
+            <div class="th-thumb">
+                <img src="{{ file.screen }}" alt="{{ file.runame }}">
+                <div class="mask">
+                    <span><i class="fa fa-eye" title="Просмотров"></i> {{ file.views|number_format }}</span>
+                    <span><i class="fa fa-{{ file.icon }}" title="Платформа"></i> {{ file.version }}</span>
+                    <span><i class="fa fa-star" title="Рейтинг {{ file.rating }} из 5"></i> {{ file.rating }}</span>
+                    <a href="{{ file.screen }}" class="zoom ulightbox">Увеличить <i class="fa fa-expand"></i></a>
+                    <a href="{{ file.link_view }}" class="more" rel="nofollow">Подробнее <i class="fa fa-arrow-right"></i></a>
+                    <div class="ht-date">{{ file.size }}</div>
+                </div>
+            </div>
+            <a itemprop="url" class="h-title" href="{{ file.link_view }}" title="{{ file.runame }}"><span itemprop="name">{{ file.runame|slice(0, 35) }}</span></a>
+            <div class="h-meta">{{ file.version }}</div>
+        </div>
+    {% endfor %}
+</div>
+{% endblock %}

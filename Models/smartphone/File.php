@@ -1,10 +1,10 @@
 <?php
-namespace Models;
+namespace Models\smartphone;
 
 use \Libraries\R;
 use \More\Ini;
 
-class FilePDAlife{
+class File{
     private $table_name;
     private $file_path;
     private $data;

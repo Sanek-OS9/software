@@ -11,6 +11,8 @@ spl_autoload_register(function ($name) {
     $name = H . '/' . str_replace('\\', '/', $name) . '.php';
     if (is_file($name)) {
         require_once $name;
+    } else {
+        //echo $name . '<br />';
     }
 });
 require_once H . '/Libraries/twig/autoload.php';

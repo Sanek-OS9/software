@@ -2,36 +2,29 @@
 namespace Controllers;
 
 use \Core\{Controller,App};
+use \Libraries\R;
 use \More\Pages;
-use \Models\{PDAlife,FilePDAlife,Software,Sitemap};
+use \Models\smartphone\{Parsing,File,Software};
+use \Models\Sitemap;
 
 class PDAlifeController extends Controller{
-
-    public function actionRandom()
-    {
-        $files = R::findAll('smartphone', 'LIMIT 200');
-        $links = [];
-        foreach ($files as $v) {
-            $file = new FilePDAlife('smartphone', $v['path']);
-            $links[] = 'http://скачай-ка.рф' . $file->link_view;
-        }
-        $id = mt_rand(0, count($links));
-        header('Location: ' . $links[$id]);
-    }
     /*
      * Генерируем sitemap.xml
      */
     public function actionSitemap()
     {
-        $file_links = Software::getFilesViewLinks();
-
+        // $file_links = Software::getFilesViewLinks();
+        $links = [];
+        $files = R::findAll('smartphone');
+        foreach ($files AS $item) {
+            $links[] = '/smartphone/' . $item['path'];
+        }
         $sitemap = new Sitemap();
-        $sitemap->setLinks($file_links);
+        $sitemap->setLinks($links);
         $sitemap->save('sitemap');
 
-        $_SESSION['test'] = true;
-        // $this->params['file_links'] = sizeof($file_links);
-        // $this->display('main/sitemap');
+        $this->params['file_links'] = sizeof($links);
+        $this->display('main/sitemap');
     }
     /*
      * Главная страница
@@ -47,7 +40,7 @@ class PDAlifeController extends Controller{
     # просмотр файла
     public function actionView(string $file_path)
     {
-        $file = new FilePDAlife($file_path);
+        $file = new File($file_path);
         if (!isset($file->id)) {
             App::access_denied('Файл не найден');
         }
@@ -58,7 +51,7 @@ class PDAlifeController extends Controller{
     # просмотр файлов по тегам
     public function actionTag(string $tag, string $page = 'page1')
     {
-        $pdalife = new PDAlife('https://pdalife.ru/tag/' . $tag . '/' . $page . '/');
+        $pdalife = new Parsing('https://pdalife.ru/tag/' . $tag . '/' . $page . '/');
 
         $this->params['files'] = $pdalife->getAllFiles();
         $this->params['title'] = $pdalife->getTitle();
@@ -80,12 +73,12 @@ class PDAlifeController extends Controller{
         list($platform, $genre, $sort_str, $sort, $page) = func_get_args();
         # формируем ссылку которую будем парсить
         $link = '/' . implode('/', $segments) . '/';
-
+        // $_SESSION['test'] = true;
         if (isset($_SESSION['test'])) {
             $second = mt_rand(5, 15);
             header('Refresh: ' . $second . '; /smartphone/' . $platform . '/page' . (Pages::getThisPage() + 1) . '/');
         }
-        $pdalife = new PDAlife('http://pdalife.ru' . $link);
+        $pdalife = new Parsing('http://pdalife.ru' . $link);
 
         $this->params['files'] = $pdalife->getAllFiles();
         $this->params['title'] = $pdalife->getTitle();
@@ -126,7 +119,7 @@ class PDAlifeController extends Controller{
     public function actionDownload(string $code)
     {
         # отправляем код (POST запросом)
-        $pdalife = new PDAlife('http://mobdisc.com/get_key/', ['forms' => ['dwn' => $code]]);
+        $pdalife = new Parsing('http://mobdisc.com/get_key/', ['forms' => ['dwn' => $code]]);
         # принимаем ответ
         # @status - статус ответа (ok - все хорошо, error - что то пошло не так)
         # @link - прямая ссылка на скачивание (если статус == ok)
@@ -140,4 +133,16 @@ class PDAlifeController extends Controller{
         header('Content-Disposition: attachment; filename=' . basename($link));
         readfile($link);
     }
+
+        public function actionRandom()
+        {
+            $files = R::findAll('smartphone', 'LIMIT 200');
+            $links = [];
+            foreach ($files as $v) {
+                $file = new File('smartphone', $v['path']);
+                $links[] = 'http://скачай-ка.рф' . $file->link_view;
+            }
+            $id = mt_rand(0, count($links));
+            header('Location: ' . $links[$id]);
+        }
 }

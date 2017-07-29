@@ -3,7 +3,7 @@ namespace Core;
 
 use \More\{Text,Pages};
 use \Core\{Twig,App};
-use \Models\Software;
+use \Models\smartphone\Software;
 
 class Controller{
     protected $params = [];

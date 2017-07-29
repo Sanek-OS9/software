@@ -1,8 +1,8 @@
 <?php
-namespace Models;
+namespace Models\smartphone;
 
 use \Libraries\R;
-use \Models\FilePDAlife;
+use \Models\smartphone\File;
 
 abstract class Software{
     # получаем файлы определенной платформы
@@ -11,7 +11,7 @@ abstract class Software{
         $items = R::findAll('smartphone', '`platform` = ? LIMIT ?', [$platform, $limit]);
         $files = [];
         foreach ($items AS $file) {
-            $files[] = new FilePDAlife($file['path']);
+            $files[] = new File($file['path']);
         }
         return $files;
     }
@@ -22,7 +22,7 @@ abstract class Software{
         $items = R::findAll('smartphone', '`runame` LIKE ? LIMIT ?', ['%' . $search . '%', $limit]);
         $files = [];
         foreach ($items as $file) {
-            $files[] = !$ajax ? new FilePDAlife($file['path']) : $file['runame'];
+            $files[] = !$ajax ? new File($file['path']) : $file['runame'];
         }
         return $files;
     }
@@ -48,7 +48,7 @@ abstract class Software{
         $links = [];
         $files = R::findAll('smartphone');
         foreach ($files AS $item) {
-            $file = new FilePDAlife($item->path);
+            $file = new File($item->path);
             $links[] = $file->link_view;
         }
         return $links;

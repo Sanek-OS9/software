@@ -1,11 +1,11 @@
 <?php
-namespace Models;
+namespace Models\torrent;
 
 use \More\{Pages,Text,Ini};
 use \Core\{App,Loadpage};
 use \Libraries\R;
 
-class Rutracker extends Loadpage{
+class Parsing extends Loadpage{
     // private $url; // URL страницы
     // private $data; // содержимое страницы
     public $platform; // платформа (windows, android)
@@ -192,7 +192,7 @@ class Rutracker extends Loadpage{
     private function getFileDescription(string $url): array
     {
         $description = [];
-        $file = new Rutracker($url);
+        $file = new Parsing($url);
         $description['link'] = $file->getLinkDownload();
         $description['description'] = $file->getDescription();
         return $description;
