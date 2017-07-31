@@ -90,7 +90,22 @@ abstract class Text
     {
         return trim(preg_replace('#(^\.)|[^a-z0-9_\-\(\)\.]+#ui', '_', self::translit($text)));
     }
-
+    # возврат строки разрешенных для названий (только кириллица)
+    public static function for_rusname(string $text): string
+    {
+        if (preg_match('#^[А-Я][а-я]{3,32}$#u', $text)) {
+            return $text;
+        }
+        return '';
+    }
+    # возврат строки разрешенной для пароля
+    public static function for_password(string $text): string
+    {
+        if (preg_match('#^[a-z0-9|\@|\!|\#|\$|\%]{4,16}$#ui', $text)) {
+            return $text;
+        }
+        return '';
+    }
     /**
      * Транслитерация русского текста в английский
      */

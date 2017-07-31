@@ -8,7 +8,7 @@ use \Models\Traits\Files;
 abstract class Software{
     use Files;
     public static $class_import = '\Models\Modules\torrent\File';
-    public static $table_name = 'torrent';
+    public static $table_name = CURRENT_SITE;
 
     # получить ссылки на просмотр файлов
     static function getFilesViewLinks(): array

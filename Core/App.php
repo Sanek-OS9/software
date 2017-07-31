@@ -48,6 +48,13 @@ abstract class App{
     }
     static function getRoutes(string $site): array
     {
-        return require_once H . '/sys/sites/' . $site . '/routes.php';
+        $routes_path = H . '/sys/sites/' . $site . '/routes.php';
+        if (!file_exists($routes_path)) {
+            self::access_denied('Файл рутов не найден');
+        }
+        if (!defined('CURRENT_SITE')) {
+            define('CURRENT_SITE', $site);
+        }
+        return require_once $routes_path;
     }
 }

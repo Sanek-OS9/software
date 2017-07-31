@@ -33,6 +33,8 @@ class PDAlifeController extends Controller{
     # Главная страница
     public function actionIndex()
     {
+        $count = \Core\DB::me()->query("SELECT COUNT(*) FROM `smartphone`")->fetchColumn();
+        echo $count;
         $this->params['files']['ios'] = Software::getFiles('ios', 6);
         $this->params['files']['android'] = Software::getFiles('android', 6);
         $this->params['files']['psp'] = Software::getFiles('psp', 4);

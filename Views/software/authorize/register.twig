@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <title>Регистрация на 7themes.su - оформление Windows 7/8</title>
+    <link type="text/css" rel="StyleSheet" href="https://7themes.su/_st/my.css" />
+    <link type="text/css" rel="StyleSheet" href="https://7themes.su/css/mainstyle.css" />
+    <link type="text/css" rel="StyleSheet" href="https://7themes.su/profile/reg-style.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://7themes.su/profile/select/form.css" rel="stylesheet" type="text/css">
+    <script language="javascript" type="text/javascript" src="https://7themes.su/profile/select/custom-form-elements.js"></script>
+    <style type="text/css">
+        input.styled { display: none; }
+        select.styled { position: relative; opacity: 0; filter: alpha(opacity=0); z-index: 5; }
+        .disabled { opacity: 0.5; filter: alpha(opacity=50); }
+    </style>
+
+    <link type="text/css" rel="stylesheet" href="https://7themes.su/.s/src/base.css" />
+    <link type="text/css" rel="stylesheet" href="https://7themes.su/.s/src/layer6.css" />
+
+    <script type="text/javascript" src="https://7themes.su/.s/src/jquery-1.7.2.js"></script>
+
+    <script type="text/javascript" src="https://7themes.su/.s/src/uwnd.js?2"></script>
+    <link type="text/css" rel="stylesheet" href="https://7themes.su/.s/src/ulightbox/ulightbox.css" />
+    <script type="text/javascript" src="https://7themes.su/.s/src/ulightbox/ulightbox.js"></script>
+
+
+    <style type="text/css">.UhideBlock{display:none; }
+    </style>
+
+</head>
+ <body id="mainContainer">
+ <script src="https://7themes.su/js/settings.js"></script>
+ <script src="https://7themes.su/js/ui.js"></script>
+ <script type="text/javascript">
+     $(document).ready(function(){
+         $(window).resize(function qwe(){
+             setTimeout(qwe, 50);
+             $('.reg-c').css({
+                 display:'inline-block',
+                 position:'absolute',
+                 left: ($(window).width() - $('.reg-c').outerWidth())/2,
+                 top: ($(window).height() - $('.reg-c').outerHeight())/2
+             });
+         });
+         $(window).resize();
+     });
+ </script>
+
+
+ <div class="reg-c">
+
+     <div class="reg-header">
+         <a id="reg-logo" href="/" title="На главную">themes.su <span><i class="fa fa-pencil-square-o"></i> Регистрация на сайте</span></a>
+         <div class="reg-singin">
+             Уже есть аккаунт?
+             <a href="/register/login/"><i class="fa fa-sign-in"></i> Вход</a>
+         </div>
+     </div>
+
+ <br>
+ <div class="reg-polosa-1"></div>
+ <div class="reg-polosa-2"></div>
+
+ <div class="strelka-animated"></div>
+
+<form method="post" action="/register/submit/" enctype="multipart/form-data" style="margin:0px">
+	<!-- Табы -->
+    <div id="tabs-1">
+        <div class="tabs-center-dm">
+            <ul class="tabs-ul">
+            <li class="tab" id="block-itd-left">
+                 <a class="tab-link tab-link1" href="#cell1">
+                     <div onclick="$(window).resize()" class="block-activ-seanse-1">
+                         <div class="krug-activ-seanse-1">
+                             <i class="fa fa-th-list"></i>
+                         </div>
+                     </div>
+                     <span class="krug-text-active-1">Оcновные данные</span>
+                 </a>
+             </li>
+             <li class="tab" id="block-itd-center">
+                 <a class="tab-link tab-link2" href="#cell2">
+                     <div onclick="$(window).resize()" class="block-activ-seanse-2">
+                         <div class="krug-activ-seanse-2">
+                             <i class="fa fa-suitcase"></i>
+                         </div>
+                     </div>
+                     <span class="krug-text-active-2">Личные данные</span>
+                 </a>
+             </li>
+             <li class="tab" id="block-itd-right">
+                 <a class="tab-link tab-link3" href="#cell3">
+                     <div onclick="$(window).resize()" class="block-activ-seanse-3">
+                         <div class="krug-activ-seanse-3">
+                             <i class="fa fa-globe"></i>
+                         </div>
+                     </div>
+                     <span class="krug-text-active-3">Интернет контакты</span>
+                 </a>
+             </li>
+            </ul>
+
+            <div id="cell1" class="tabs-content-1"><div class="block-reg-content-1">
+            <div class="polosa-ograjdeniya"></div>
+            <i class="fa fa-user" id="icon-user-reg"></i>
+            <i class="fa fa-lock" id="icon-pass-reg"></i>
+            <span id="icon-mail-reg">@</span>
+
+            {% if error %}
+                <span id="error-1">{{error}}</span>
+                <script type="text/javascript">
+                    setTimeout(function(){$('#error-1').fadeOut(1500)},4000);
+                </script>
+            {% endif %}
+
+            <input type="text" id="siF16" class="manFlaName" name="name" size="20" style="width:100%;" value="" maxlength="35" />
+            <input type="text" id="siF13" class="manFlLogin" name="user" value="" size="20" style="width:100%" maxlength="25" />
+            <input type="password" id="siF14" class="manFlPassw" name="password" size="20" style="width:100%" maxlength="15" />
+            <input type="password" id="siF15" class="manFlPassw1" name="password1" size="20" style="width:100%" maxlength="15" />
+            <input type="text" id="siF17" class="manFlaEmail" name="email" size="20" style="width:100%;" value="" maxlength="60" onchange="_uWnd.alert('Проверьте правильность вашего Email адреса, на этот адрес будет выслано письмо с кодом подтверждения. Если не подтвердить email, то любая активность, для которой используется электронная почта, будет заблокирована для вас.','',{w:300,h:100,tm:8000});" />
+
+            </div>
+            </div>
+
+
+            <div id="cell2" class="tabs-content-2">
+            <div class="block-reg-content-2">
+                <div class="polosa-ograjdeniya2"></div>
+                <div class="registrarion-block-center-width">
+                    <div class="registrarion-block-name-1">
+                        <i class="fa fa-picture-o" id="icon-reg-avatar"></i>Аватар:
+                    </div>
+                    <div class="registrarion-block-name-2">
+                        <i class="fa fa-gift" id="icon-reg-gift"></i>Дата рождения:
+                    </div>
+                    <div class="registrarion-block-name-3">
+                        <i class="fa fa-male" id="icon-reg-male"></i>Пол:
+                    </div>
+                    <div class="registrarion-block-name-4">
+                        <i class="fa fa-flag-o" id="icon-reg-flag"></i>Страна:
+                    </div>
+                    <div class="registrarion-block-name-5">
+                        <i class="fa fa-building-o" id="icon-reg-building"></i>Город:
+                    </div>
+                    <div class="registrarion-block-name-6">
+                        <i class="fa fa-windows" id="icon-reg-windows"></i>ОС:
+                    </div>
+                    <div class="registrarion-block-name-7">
+                        <i class="fa fa-pencil-square" id="icon-reg-square"></i>
+                        <span class="name-podpis-1">Ваша подпись:</span>
+                        <span class="name-podpis-2">-Максимум 250 символов</span>
+                        <span class="name-podpis-3">-ВВ-коды разрешены</span>
+                    </div>
+                </div>
+
+                <span id="ava1" style="display:none;"></span>
+                <input type="file" id="siF11" class="manFlAvaFile" name="avatar" style="width:100%;margin-bottom:35px;" size="20">
+
+                <div class="knopki-dates-reg">
+                    <select name="by" id="fBthY" class=""  >
+                        <option value="0">Год</option>
+                        {% for i in 2017..1917 %}
+                            <option value="{{i}}">{{i}}</option>
+                        {% endfor %}
+                    </select> -
+                    <select name="bm" id="fBthM" class=""  >
+                        <option value="0">Месяц</option>
+                        <option value="1">Январь</option>
+                        <option value="2">Февраль</option>
+                        <option value="3">Март</option>
+                        <option value="4">Апрель</option>
+                        <option value="5">Май</option>
+                        <option value="6">Июнь</option>
+                        <option value="7">Июль</option>
+                        <option value="8">Август</option>
+                        <option value="9">Сентябрь</option>
+                        <option value="10">Октябрь</option>
+                        <option value="11">Ноябрь</option>
+                        <option value="12">Декабрь</option>
+                    </select> -
+                    <select name="bd" id="fBthD" class=""    >
+                        <option value="0">День</option>
+                        {% for i in 1..31 %}
+                            <option value="{{i}}">{{i}}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+
+                <div class="knopki-pol-reg">
+                    <select class="manFlaGender" name="gender">
+                        <option value="1">Мужчина</option>
+                        <option value="2">Женщина</option>
+                    </select>
+                </div>
+
+                <div class="knopki-strana-reg">
+                    <select class="manFlaCountry" id="siF6" name="country">
+                        <option value="33" selected class="top">Канада</option>
+                        <option value="169" class="top">Российская Федерация</option>
+                        <option value="204" class="top">Украина</option>
+                        <option value="31" class="top">Беларусь</option>
+                    </select>
+                </div>
+                <input type="text" id="siF8" class="manFlaCity" name="city" size="20" style="width:100%;" value="" maxlength="50" />
+
+                <select size="1" class="manFlaOS" onchange="siF7.value=this.options[this.selectedIndex].text">
+                    <option value="1" id="my1"></option>
+                    <option value="2" id="my2">IOS</option>
+                    <option value="3" id="my3">Android</option>
+                    <option value="4" id="my4">Windows 7</option>
+                    <option value="5" id="my5">Windows 8</option>
+                    <option value="6" id="my6">Windows 10</option>
+                </select>
+                <input type="text" id="siF7" class="manFlaState" name="state" size="20" style="width:100%;" value="" maxlength="35" />
+
+
+
+                <textarea rows="4" id="siF9" name="signature" class="manFlaSign" cols="20" style="width:100%;"></textarea>
+
+            </div>
+            </div>
+
+
+            <div id="cell3" class="tabs-content-3">
+            <div class="block-reg-content-3">
+                <div class="polosa-ograjdeniya"></div>
+                <div class="registrarion-block-center-width-2">
+                    <div class="registrarion-block-name-2-1">
+                        <i class="fa fa-globe" id="icon-reg-globe"></i>Веб-сайт/Портфолио:
+                    </div>
+                    <div class="registrarion-block-name-2-2">
+                        <i class="fa fa-skype" id="icon-reg-skype"></i>Skype:
+                    </div>
+                    <div class="registrarion-block-name-2-3">
+                        <i id="icon-reg-ICQ"></i>ICQ:
+                    </div>
+                    <div class="registrarion-block-name-2-4">
+                        <i class="fa fa-vk" id="icon-reg-vk"></i>Вконтакте:
+                    </div>
+                </div>
+                <input type="text" id="siF1" class="manFlaSite" name="home_page" size="20" style="width:100%;" value="" maxlength="100" />
+                <input type="text" id="siF4" class="manFlaMSN" name="msn" size="20" style="width:100%;" value="" maxlength="30" />
+                <input type="text" id="siF2" class="manFlaICQ" name="icq" size="20" style="width:100%;" value="" maxlength="15" />
+                <input type="text" id="siF5" class="manFlaYahoo" name="yahoo" size="20" style="width:100%;" value="" maxlength="30" />
+            </div>
+            </div>
+
+            <button class="manFlSbm" id="siF20" type="submit" name="sbm" value="Отправить">
+            <i class="fa fa-check-circle"></i> Отправить
+            </button>
+        </div>
+    </div>
+    <!-- /Табы -->
+</form>
+
+
+ <div class="reg-soc-sety" style="background: none;">
+ <div class="reg-block-soc-sety-prem">
+ Преимущества регистрации
+ <div class="text-names-reg-prem1"><i class="fa fa-check" id="icon-reg-check-good"></i>Нет ограничений скорости</div>
+ <div class="text-names-reg-prem"><i class="fa fa-check" id="icon-reg-check-good"></i>Личный кабинет на сайте</div>
+ <div class="text-names-reg-prem"><i class="fa fa-check" id="icon-reg-check-good"></i>Сохранять материалы в избранном</div>
+ <div class="text-names-reg-prem"><i class="fa fa-check" id="icon-reg-check-good"></i>Меньше рекламы</div>
+ <div class="text-names-reg-prem"><i class="fa fa-check" id="icon-reg-check-good"></i>Расширеный функционал сайта</div>
+ </div>
+ </div>
+
+
+
+ <div class="powered_by">
+
+ </div>
+ <script type="text/javascript">
+     $('.tab-link1').click(function (){setTimeout(function(){$('.strelka-animated').animate({ margin: "121px 0px 0px 98px" }, 300 )},0);});
+     $('.tab-link2').click(function (){setTimeout(function(){$('.strelka-animated').animate({ margin: "121px 0px 0px 284px" }, 300 )},0);});
+     $('.tab-link3').click(function (){setTimeout(function(){$('.strelka-animated').animate({ margin: "121px 0px 0px 472px" }, 300 )},0);});
+
+     $('.tab-link1').click(function (){
+     setTimeout(function(){$('.block-reg-content-1').animate({ opacity: "0" }, 300 );},0);
+     setTimeout(function(){$('.block-reg-content-2').animate({ opacity: "0" }, 300 );},0);
+     setTimeout(function(){$('.block-reg-content-3').animate({ opacity: "0" }, 300 );},0);
+     setTimeout(function(){$('.block-reg-content-1').animate({ opacity: "1" }, 300 );},300);
+     });
+     $('.tab-link2').click(function (){
+     setTimeout(function(){$('.block-reg-content-1').animate({ opacity: "0" }, 300 );},0);
+     setTimeout(function(){$('.block-reg-content-2').animate({ opacity: "0" }, 300 );},0);
+     setTimeout(function(){$('.block-reg-content-3').animate({ opacity: "0" }, 300 );},0);
+     setTimeout(function(){$('.block-reg-content-2').animate({ opacity: "1" }, 300 );},300);
+     });
+     $('.tab-link3').click(function (){
+     setTimeout(function(){$('.block-reg-content-1').animate({ opacity: "0" }, 300 );},0);
+     setTimeout(function(){$('.block-reg-content-2').animate({ opacity: "0" }, 300 );},0);
+     setTimeout(function(){$('.block-reg-content-3').animate({ opacity: "0" }, 300 );},0);
+     setTimeout(function(){$('.block-reg-content-3').animate({ opacity: "1" }, 300 );},300);
+     });
+
+     $(".block-reg-content-1 input[class*='manFlLogin']").attr('placeholder', 'Логин*');
+     $(".block-reg-content-1 input[class*='manFlPassw']").attr('placeholder', 'Пароль*');
+     $(".block-reg-content-1 input[class*='manFlPassw1']").attr('placeholder', 'Пароль (подтверждение)*');
+     $(".block-reg-content-1 input[class*='manFlaName']").attr('placeholder', 'Настоящее имя*');
+     $(".block-reg-content-1 input[class*='manFlaEmail']").attr('placeholder', 'E-mail адрес*');
+
+     $(".block-reg-content-2 input[class*='manFlaState']").attr('placeholder', 'ОС не выбрана');
+
+     $(".knopki-dates-reg select[id*='fBthY']").addClass('styled');
+     $(".knopki-dates-reg select[id*='fBthM']").addClass('styled');
+     $(".knopki-dates-reg select[id*='fBthD']").addClass('styled');
+     $(".block-reg-content-2 select[class*='manFlaGender']").addClass('styled');
+     $(".block-reg-content-2 select[class*='manFlaCountry']").addClass('styled');$(".block-reg-content-2 select[class*='manFlaCountry']").addClass('styled');
+ </script>
+
+ <script type="text/javascript" src="https://7themes.su/js/reg-tabs.js"></script>
+ <script type="text/javascript">
+ document.getElementById('c1').checked=true;
+ document.adduser.mmcid[i].checked=true;
+ </script>
+ <style type="text/css">
+ .subs {display:none}
+ </style>
+ </body>
+</html>
+<!-- 0.02021 (s76) -->

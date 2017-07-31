@@ -5,6 +5,10 @@
  @param method - способ передачи данных POST/GET
 */
 return [
+    # регистрация
+    ['pattern' => 'register','run' => 'Authorize/register','method' => 'GET'],
+    # регистрация (отправка формы)
+    ['pattern' => 'register/submit','run' => 'Authorize/register','method' => 'POST'],
     # главная страница
     ['pattern' => '','run' => 'PDAlife/index','method' => 'GET'],
     # перенаправление на случайный файл
