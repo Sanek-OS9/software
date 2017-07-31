@@ -81,6 +81,8 @@ class RutrackerController extends Controller{
 
         $this->params['files'] = $rutracker->getAllFiles();
         $this->pagesDisplay($rutracker->countPages()); // показ.пагинации
+        # если файлов нету (например нас заблокировали по IP)
+        # выводим файлы с нашей базы данных
         if (!$this->params['files']) {
             if ($genre) {
                 $pages = new Pages(R::count('torrent', '`platform` = ? AND `genre` = ?', [$platform, $genre]));
